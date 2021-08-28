@@ -1,0 +1,405 @@
+{
+    "LinkCollection": [{
+        "ownerID": 1,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    },{
+        "ownerID": 2,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    },{
+        "ownerID": 4,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    },{
+        "ownerID": 5,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    },{
+        "ownerID": 1,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    },{
+        "ownerID": 6,
+        "createdAt": "28/08/2020",
+        "updateAt": "29/08/2020",
+        "avatartURL": "https://picsum.photos/200",
+        "title": "Article",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "bgColor: string": ["blue", "black","pink","yelow"],
+        "bgImageURL": "https://picsum.photos/200",
+        "webLinks": [
+        {
+            "link": "https://linktr.ee/admin",
+            "icon": "Tree",
+            "label": "LinkTree",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 100
+        },
+        {
+            "link": "https://app.diagrams.net",
+            "icon": "Diagrams",
+            "label": "Diagrams",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 99
+        },
+        {
+            "link": "https://code.tutsplus.com",
+            "icon": "Plus",
+            "label": "Tutsplus",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 98
+        },
+        {
+            "link": "https://pnghunter.com/",
+            "icon": "Hunter",
+            "label": "Pnghunter",
+            "textColor":["blue", "black","pink","yelow"],
+            "bgColor":["blue", "black","pink","yelow"],
+            "borderWidth": 1,
+            "clickCount": 97
+        }],
+        "socialLinks": [
+        {
+            "link": "https://www.facebook.com/",
+            "type": "facebook",
+            "color":"blue",
+            "clickCount": 96
+        },
+        {
+            "link":"https://zalo.me/pc",
+            "type": "zalo",
+            "color":"lightblue",
+            "clickCount": 95
+        },
+        {
+            "link":"https://www.instagram.com/",
+            "type": "instagram",
+            "color":"daskorange",
+            "clickCount": 95
+        }],
+        "visitCount": 100
+            
+    }]
+}
