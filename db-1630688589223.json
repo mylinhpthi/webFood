@@ -575,7 +575,7 @@
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
       "avatartURL": "https://picsum.photos/200",
-      "title": "David",
+      "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
         "blue",
@@ -665,10 +665,14 @@
           "label": "aaa",
           "link": "xxxxx"
         },
-        {
-          "label": "asss",
-          "link": "asvss"
-        }
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
       ],
       "socialLinks": [
         {
