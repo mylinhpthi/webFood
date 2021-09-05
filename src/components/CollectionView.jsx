@@ -1,23 +1,52 @@
-import React from 'react'
-import useAxios from "axios-hooks";
-import CollectionItem from './CollectionItem';
-function CollectionView() {
-    const [{ data, loading, error }] = useAxios('LinkCollection/5');
-    const success = !loading && !error;
-    const hasLink = data != null ;
-    const renderOwnerLink = () =>(
-        <CollectionItem id ={data.id} avatartURL={data.avatartURL} title = {data.title} webLinks = {data.webLinks} />
-            
-    );
+import { Avatar, makeStyles, Paper,createStyles, Theme, Typography  } from '@material-ui/core'
+import React, { useState } from 'react'
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
+        display:'flex',
+        flexDirection:'column',
+        border:'8px solid #fff',
+        margin: '20px auto',
+        width:'250px',
+        height:'500px',
+        padding: '10px',
+        borderRadius:'30px',
+        backgroundImage:'linear-gradient( to bottom,#ccff00,#d8f28c,#d5f7be ,#ebfce0 )',
+    },
+    avatar: {
+        alignItems:'center',
+        margin:'10px auto',
+        width: theme.spacing(10),
+        height: theme.spacing(10),
+    },
+    item__link:{
+        textDecoration:'none',
+        color:'black'
+    },
+    item:{
+        margin: ' 5px auto',
+        background: '#61f450',
+        width: '80%',
+        textAlign:'center',
+        padding:'10px'
+    }
+  }),
+);
+function CollectionView({data}) {
+    const classes = useStyles();
+    console.log(data)
     return (
-        <div>
-  
-        {loading && <em>Loading....</em>}
-        {error && <em>An error occurs, try again</em>}
-        {success && !hasLink && <em>No data</em>}
-        {
-            success && hasLink && renderOwnerLink()
-        }
+        <div >
+            <Paper className={classes.root}>
+                <Avatar className={classes.avatar} src={data.avatarURL}/>
+                <Typography variant='h6' align='center' >{data.title}</Typography>
+                {data.webLinks && data.webLinks.map(({link, label})=>(
+                    <div className={classes.item} spacing={5}>
+                        <a className={classes.item__link} href={link}>{label}</a>
+                    </div>
+                ))}
+                
+            </Paper>
         </div>
     )
 }

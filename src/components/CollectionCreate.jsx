@@ -1,33 +1,43 @@
-import React, { useState } from "react";
+import { makeStyles, mergeClasses } from "@material-ui/styles";
+import React, { useEffect, useState } from "react";
 import CollectionControl from "./CollectionControl";
 import CollectionCreateItem from "./CollectionCreateItem";
-function CollectionCreate() {
-  const [status, setStatus] = useState([])
-  const handleAddRemoveItems = (paramsAdd, paramsRemove) =>{
-    if(paramsAdd){
-      if(status.length<4){
-        setStatus([...status,<CollectionCreateItem index={status.length++} key ={status.length} onReceive={handleRemoveAItem}/>])
+const useStyle = makeStyles({
+  container:{
+    
+
+  }
+})
+function CollectionCreate({data}) {
+  const [items, setItems] = useState([]);
+
+  const classes = useStyle();
+
+  useEffect(() => {
+    if(data)  setItems(data.webLinks)
+  }, [data])
+
+  const handleAddItems = (params) =>{
+    if(params){
+      if(items.length<5){
+        setItems(prev=>([...prev,{label:"", link:""}]))
       }
     }
-    if(paramsRemove){
-      setStatus([]);
-    }
   }
-  const handleRemoveAItem = (index) =>{
-    var array = [...status];
-    array.splice(index,1);
-    setStatus([...array])
+ 
+  const handleRemoveItem = (index) =>{
+    setItems((prev)=>([
+        ...prev.slice(0, index),
+        ...prev.slice(index+1)
+    ]))
   }
   
   return (
-    <div className="container">
-        <div className="create__content">
-          {/* add or remove */}
-          {status} 
-          {/* depend on signal for control */}
-          <CollectionControl onReceive = {handleAddRemoveItems}/>
+        <div className={classes.container}>
+          
+          <CollectionControl onReceive={handleAddItems}/>
+          {items && items.map((item, index)=>(<CollectionCreateItem key={index} index={index} onReceive={handleRemoveItem} item={item} />))}
         </div>
-    </div>
   );
 }
 

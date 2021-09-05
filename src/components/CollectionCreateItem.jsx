@@ -1,28 +1,64 @@
-import { Grid, TextField } from "@material-ui/core";
-import { AccountCircle } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/styles";
+import { Button, createTheme, Grid, TextField } from "@material-ui/core";
+import {
+  AccountCircle,
+  BookTwoTone,
+  Label,
+  Link,
+  LinkTwoTone,
+} from "@material-ui/icons";
+import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import useAxios from "axios-hooks";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 const useStyle = makeStyles({
-  margin:{
-    margin: '10px'
-  }
-})
-function CollectionCreateItem({index, onReceive}) {
+  root: {
+    border: "3px solid #fff",
+    marginBottom: "10px",
+    padding: "15px",
+    display:'flex',
+    flexDirection:'column',
+    width:'80%',
+    margin:'auto'
+  },
+  input__control: {
+    display: "flex",
+    justifyContent: "space-around",
+    margin:'5px auto',
+    width: "70%",
+    "&>Button": {
+      border: "1px solid #fff",
+      color: "#000",
+      marginBottom: "5px",
+      background: "#fff",
+      margin: "5px",
+      "&:hover": {
+        background: "#000",
+        color:"#fff"
+      },
+    },
+  },
+  input__icon: {
+    height: "100%",
+    fontSize:25,
+    marginRight: "10px",
+  },
+  input: {
+    margin: '10px auto'
+  },
+});
+
+function CollectionCreateItem({ index, onReceive, item }) {
   const classes = useStyle();
   const [formDataLink, setFormDataLink] = useState({});
-  const [{ data: CollectionLink, loading, error }] = useAxios(
-    `LinkCollection/5`
-  );
+  const [{ data: CollectionLink, loading, error }] =
+    useAxios(`LinkCollection/5`);
   const success = !loading && !error;
-
-// Create
+  // Create
   const [
-    { loading: uLoading, error: uError, response: uResponse },
-    updateLink,
+    { loading: cLoading, error: cError, response: cResponse },
+    createLink,
   ] = useAxios(
     {
       url: `LinkCollection/5`,
@@ -30,8 +66,7 @@ function CollectionCreateItem({index, onReceive}) {
     },
     { manual: true }
   );
-  const uSuccess = uResponse && uResponse.status === 201;
-
+  const cSuccess = cResponse && cResponse.status === 201;
   const handleChange = (field) => (event) =>
     setFormDataLink((prev) => ({
       ...prev,
@@ -40,52 +75,70 @@ function CollectionCreateItem({index, onReceive}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateLink({data :{webLinks:[...CollectionLink.webLinks,formDataLink]}})
+    createLink({
+      data: { webLinks: [
+        ...CollectionLink.webLinks.slice(0, index),
+        formDataLink, 
+        ...CollectionLink.webLinks.slice(index+1)
+        
+      
+      ] },
+    });
   };
-  const isReady =  (CollectionLink && success);
-  
-  const handleRemove = ()=>{
-      onReceive(index);
-  }
+  const isReady = CollectionLink && success;
+
+  const handleRemove = () => {
+    onReceive(index);
+    createLink({
+      data: { webLinks: [
+        ...CollectionLink.webLinks.slice(0, index),
+        ...CollectionLink.webLinks.slice(index+1)
+      ] },
+    });
+  };
+  useEffect(() => {
+    if (isReady) {
+      const { label, link } = item || {};
+      setFormDataLink({ label, link });
+      console.log({ label, link });
+    }
+  }, [isReady]);
   return (
-    <form key={index} onSubmit={handleSubmit} className="link__item">
-      <div className="link__input">
-        <div>
-          <label htmlFor="link_label">Label</label>
-          <input
-            value={formDataLink["label"] || ""}
-            onChange={handleChange("label")}
-            type="text"
-            placeholder="label"
-            name="label"
-            id=""
-          />
-        </div>
-        <div className={classes.margin}>
-        <Grid container spacing={1} alignItems="flex-end">
-          <Grid item>
-            <AccountCircle />
+    <form key={index} className={classes.root} onSubmit={handleSubmit}>
+      <div className={classes.input}>
+        <Grid container alignItems="flex-end">
+          <Grid item xs={12}>
+            <BookTwoTone className={classes.input__icon} />
+            <TextField
+              value={formDataLink["label"] || ""}
+              onChange={handleChange("label")}
+              type="text"
+              name="label"
+              style={{width: '80%'}}
+              id="input-with-icon-grid"
+              placeholder="Title"
+            />
           </Grid>
-          <Grid item>
-            <TextField id="input-with-icon-grid" label="With a grid" />
+          <Grid item xs={12}>
+            <LinkTwoTone className={classes.input__icon} />
+            <TextField
+              value={formDataLink["link"] || ""}
+              type="text"
+              onChange={handleChange("link")}
+              name="link"
+              style={{width: '80%'}}
+              placeholder="http://"
+            />
           </Grid>
         </Grid>
       </div>
-        <div>
-          <label htmlFor="link">URL</label>
-          <input
-            value={formDataLink["link"] || ""}
-            type="text"
-            onChange={handleChange("link")}
-            placeholder="http://"
-            name="link"
-            id=""
-          />
-        </div>
-      </div>
-      <div className="link__button">
-        <button onClick={handleRemove}>Remove</button>
-        <button type="submit">Save</button>
+      <div className={classes.input__control}>
+        <Button size="small" variant="contained" onClick={handleRemove}>
+          Remove
+        </Button>
+        <Button type="submit" size="small" variant="contained">
+          Save
+        </Button>
       </div>
     </form>
   );

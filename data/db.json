@@ -4,7 +4,7 @@
       "id": 0,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -118,7 +118,7 @@
       "id": 1,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -232,7 +232,7 @@
       "id": 2,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -346,7 +346,7 @@
       "id": 3,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -460,7 +460,7 @@
       "id": 4,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -574,7 +574,7 @@
       "id": 5,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "David",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
@@ -584,92 +584,7 @@
         "yelow"
       ],
       "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        },
-        {
-          "label": "aaa",
-          "link": "xxxxx"
-        },
-        {
-          "label": "asss",
-          "link": "asvss"
-        }
-      ],
+      "webLinks": [],
       "socialLinks": [
         {
           "link": "https://www.facebook.com/",
@@ -696,7 +611,7 @@
       "id": 6,
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
-      "avatartURL": "https://picsum.photos/200",
+      "avatarURL": "https://picsum.photos/200",
       "title": "Article",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
