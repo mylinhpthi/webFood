@@ -1,43 +1,68 @@
+import { Button } from "@material-ui/core";
 import { makeStyles, mergeClasses } from "@material-ui/styles";
 import React, { useEffect, useState } from "react";
 import CollectionControl from "./CollectionControl";
 import CollectionCreateItem from "./CollectionCreateItem";
 const useStyle = makeStyles({
-  container:{
+  control:{
+    width: "50%",
+    margin: '30px auto',
     
-
-  }
-})
-function CollectionCreate({data}) {
+    "&>Button": {
+      padding:'10px',
+      border: "1px solid #fff",
+      color: "#000",
+      width:'100%',
+      marginBottom: "5px",
+      background: "#fff",
+      margin: "5px",
+      "&:hover": {
+        background: "#000",
+        color:"#fff"
+      },
+    }
+    }
+});
+function CollectionCreate({ data, onNewData }) {
   const [items, setItems] = useState([]);
 
   const classes = useStyle();
 
   useEffect(() => {
-    if(data)  setItems(data.webLinks)
-  }, [data])
+    if (data) setItems(data.webLinks);
+  }, [data]);
 
-  const handleAddItems = (params) =>{
-    if(params){
-      if(items.length<5){
-        setItems(prev=>([...prev,{label:"", link:""}]))
+  const handleAddItems = () => {
+      if (items.length < 5) {
+        setItems((prev) => [...prev, { label: "", link: "" }]);
       }
-    }
-  }
- 
-  const handleRemoveItem = (index) =>{
-    setItems((prev)=>([
-        ...prev.slice(0, index),
-        ...prev.slice(index+1)
-    ]))
-  }
-  
+  };
+
+  const handleRemoveItem = (index) => {
+    setItems((prev) => [...prev.slice(0, index), ...prev.slice(index + 1)]);
+  };
+  const NewData = (params) => {
+    onNewData(params);
+    setItems(params.webLinks);
+  };
   return (
-        <div className={classes.container}>
-          
-          <CollectionControl onReceive={handleAddItems}/>
-          {items && items.map((item, index)=>(<CollectionCreateItem key={index} index={index} onReceive={handleRemoveItem} item={item} />))}
-        </div>
+    <div className={classes.container}>
+      <div className={classes.control}>
+        <Button size="medium" variant="contained" onClick={handleAddItems}>
+          ADD THE NEW LINK
+        </Button>
+      </div>
+      {items &&
+        items.map((item, index) => (
+          <CollectionCreateItem
+            key={index}
+            onNewData={NewData}
+            index={index}
+            onReceive={handleRemoveItem}
+            item={item}
+          />
+        ))}
+    </div>
   );
 }
 

@@ -584,7 +584,12 @@
         "yelow"
       ],
       "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [],
+      "webLinks": [
+        {
+          "label": "hh",
+          "link": ""
+        }
+      ],
       "socialLinks": [
         {
           "link": "https://www.facebook.com/",

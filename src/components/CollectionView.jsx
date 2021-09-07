@@ -24,24 +24,26 @@ const useStyles = makeStyles((theme) =>
         color:'black'
     },
     item:{
-        margin: ' 5px auto',
+        margin: '10px auto',
         background: '#61f450',
         width: '80%',
         textAlign:'center',
-        padding:'10px'
+        padding:'10px',
+        "&>a":{
+            fontSize:'18px'
+        }
     }
   }),
 );
 function CollectionView({data}) {
     const classes = useStyles();
-    console.log(data)
     return (
         <div >
             <Paper className={classes.root}>
                 <Avatar className={classes.avatar} src={data.avatarURL}/>
                 <Typography variant='h6' align='center' >{data.title}</Typography>
-                {data.webLinks && data.webLinks.map(({link, label})=>(
-                    <div className={classes.item} spacing={5}>
+                {data.webLinks && data.webLinks.map(({link, label, index})=>(
+                    <div key={index} className={classes.item} spacing={5}>
                         <a className={classes.item__link} href={link}>{label}</a>
                     </div>
                 ))}

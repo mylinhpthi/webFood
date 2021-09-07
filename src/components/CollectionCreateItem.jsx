@@ -49,7 +49,7 @@ const useStyle = makeStyles({
   },
 });
 
-function CollectionCreateItem({ index, onReceive, item }) {
+function CollectionCreateItem({ index, onReceive, onNewData, item }) {
   const classes = useStyle();
   const [formDataLink, setFormDataLink] = useState({});
   const [{ data: CollectionLink, loading, error }] =
@@ -58,7 +58,7 @@ function CollectionCreateItem({ index, onReceive, item }) {
   // Create
   const [
     { loading: cLoading, error: cError, response: cResponse },
-    createLink,
+    updateLink,
   ] = useAxios(
     {
       url: `LinkCollection/5`,
@@ -75,32 +75,37 @@ function CollectionCreateItem({ index, onReceive, item }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createLink({
+    updateLink({
       data: { webLinks: [
         ...CollectionLink.webLinks.slice(0, index),
         formDataLink, 
         ...CollectionLink.webLinks.slice(index+1)
-        
-      
       ] },
-    });
+    }).then(res =>{
+      if(res.status === 200){
+        onNewData(res.data)
+      }
+    })
   };
   const isReady = CollectionLink && success;
 
   const handleRemove = () => {
     onReceive(index);
-    createLink({
+    updateLink({
       data: { webLinks: [
         ...CollectionLink.webLinks.slice(0, index),
         ...CollectionLink.webLinks.slice(index+1)
       ] },
-    });
+    }).then(res =>{
+      if(res.status === 200){
+        onNewData(res.data)
+      }
+    })
   };
   useEffect(() => {
     if (isReady) {
       const { label, link } = item || {};
       setFormDataLink({ label, link });
-      console.log({ label, link });
     }
   }, [isReady]);
   return (

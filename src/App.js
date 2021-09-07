@@ -1,22 +1,26 @@
 import "./App.css";
-import logo from './images/logo.png';
+import logo from "./images/logo.png";
 import useAxios, { configure } from "axios-hooks";
 import LRU from "lru-cache";
 import Axios from "axios";
 import CollectionCreate from "./components/CollectionCreate";
 import CollectionView from "./components/CollectionView";
+import Fade from '@material-ui/core/Fade';
 import {
   Button,
   Card,
   CardMedia,
   CssBaseline,
   Grid,
+  IconButton,
   makeStyles,
+  Menu,
+  MenuItem,
   Paper,
   Tab,
   Tabs,
 } from "@material-ui/core";
-import { Height } from "@material-ui/icons";
+import { ContactSupport, QueuePlayNext, Apps, ExpandMore, MoreVert, ExitToApp } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 const axios = Axios.create({
   baseURL: "http://localhost:8000/",
@@ -25,7 +29,7 @@ const axios = Axios.create({
 const cache = new LRU({ max: 10 });
 
 configure({ axios, cache });
-const useStyle = makeStyles({
+const useStyle = makeStyles((them)=>({
   root: {
     marginTop: "100px",
     width: "95%",
@@ -42,14 +46,24 @@ const useStyle = makeStyles({
     justifyContent: "space-around",
   },
   navbar__content: {
-    width: "60%",
-    float: "right",
+    width: "70%",
+    display:'flex',
+    justifyContent:'flex-end',
+    [them.breakpoints.down('xs')]: {
+      display:'none'
+    },
   },
   navbar__logo: {
-    width: "15%",
-    
+    width: '15%',
   },
-});
+  fade_menu:{
+    display:'none',
+    width:'10%',
+    [them.breakpoints.down('xs')]: {
+      display:'inline-block',
+    },
+  }
+}));
 
 function App() {
   const classes = useStyle();
@@ -57,16 +71,27 @@ function App() {
   const [user, setUser] = useState({});
   const success = !loading && !error;
   const hasLink = data != null;
-  const handleChange = () => {
-    setUser(data);
+  const handleChange = (params) => {
+    if (params) setUser(params);
   };
   useEffect(() => {
     if (data) setUser(data);
   }, [data]);
+  // Nav
   const [value, setValue] = useState(0);
   const handleChangeNavbar = (event, newValue) => {
     setValue(newValue);
   };
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  // Nav
   return (
     <div>
       <CssBaseline />
@@ -81,17 +106,42 @@ function App() {
           <Tabs
             value={value}
             onChange={handleChangeNavbar}
-            indicatorColor="primary"
-            textColor="primary"
-            centered
+            indicatorColor="secondary"
+            textColor="secondary"
+            aria-label="icon label tabs example"
           >
-            <Tab label="Features" />
-            <Tab label="About us" />
-            <Tab label="Help" />
-            <Tab label="Pricing" />
+            <Tab icon={<Apps />} label="FEATURES" />
+            <Tab icon={<QueuePlayNext />} label="ABOUT US" />
+            <Tab icon={<ContactSupport />} label="SUPPORT" />
+            <Tab icon={<ExitToApp />} label="LOG OUT" />
           </Tabs>
-        </div>
-      <Button>Log out</Button>
+          </div>
+        
+        <div className={classes.fade_menu}>
+          <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+           <Button>More...</Button>
+          </IconButton>
+          <Menu
+            
+            anchorEl={anchorEl}
+            keepMounted
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Fade}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Features</MenuItem>
+            <MenuItem onClick={handleClose}>Support</MenuItem>
+            <MenuItem onClick={handleClose}>About us</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
+          </div>
       </Paper>
 
       {loading && <em>Loading....</em>}
@@ -104,16 +154,14 @@ function App() {
           justifyContent="center"
           className={classes.root}
         >
-          <Grid item xs={6} className={classes.create}>
-            <CollectionCreate data={user} onChange={handleChange} />
+          <Grid item xs={12} md={6} className={classes.create}>
+            <CollectionCreate data={user} onNewData={handleChange} />
           </Grid>
-          <Grid item xs={6} className={classes.view}>
+          <Grid item xs={12} md={6} className={classes.view}>
             <CollectionView data={user} />
           </Grid>
         </Grid>
       )}
-
-
     </div>
   );
 }
