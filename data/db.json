@@ -575,7 +575,7 @@
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
       "avatarURL": "https://picsum.photos/200",
-      "title": "David",
+      "title": "Collection Link ",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
         "blue",
@@ -586,8 +586,17 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "hh",
+          "label": "Linhhhh",
           "link": ""
+        },
+        {
+          "label": "Linh",
+          "link": ""
+        },
+        {
+          "label": "My Linh",
+          "link": "",
+          "color": "#ffe500"
         }
       ],
       "socialLinks": [

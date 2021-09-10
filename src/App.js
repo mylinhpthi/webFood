@@ -5,7 +5,7 @@ import LRU from "lru-cache";
 import Axios from "axios";
 import CollectionCreate from "./components/CollectionCreate";
 import CollectionView from "./components/CollectionView";
-import Fade from '@material-ui/core/Fade';
+import Fade from "@material-ui/core/Fade";
 import {
   Button,
   Card,
@@ -20,7 +20,14 @@ import {
   Tab,
   Tabs,
 } from "@material-ui/core";
-import { ContactSupport, QueuePlayNext, Apps, ExpandMore, MoreVert, ExitToApp } from "@material-ui/icons";
+import {
+  ContactSupport,
+  QueuePlayNext,
+  Apps,
+  ExpandMore,
+  MoreVert,
+  ExitToApp,
+} from "@material-ui/icons";
 import { useEffect, useState } from "react";
 const axios = Axios.create({
   baseURL: "http://localhost:8000/",
@@ -29,7 +36,7 @@ const axios = Axios.create({
 const cache = new LRU({ max: 10 });
 
 configure({ axios, cache });
-const useStyle = makeStyles((them)=>({
+const useStyle = makeStyles((them) => ({
   root: {
     marginTop: "100px",
     width: "95%",
@@ -47,22 +54,22 @@ const useStyle = makeStyles((them)=>({
   },
   navbar__content: {
     width: "70%",
-    display:'flex',
-    justifyContent:'flex-end',
-    [them.breakpoints.down('xs')]: {
-      display:'none'
+    display: "flex",
+    justifyContent: "flex-end",
+    [them.breakpoints.down("xs")]: {
+      display: "none",
     },
   },
   navbar__logo: {
-    width: '15%',
+    width: "15%",
   },
-  fade_menu:{
-    display:'none',
-    width:'10%',
-    [them.breakpoints.down('xs')]: {
-      display:'inline-block',
+  fade_menu: {
+    display: "none",
+    width: "10%",
+    [them.breakpoints.down("xs")]: {
+      display: "inline-block",
     },
-  }
+  },
 }));
 
 function App() {
@@ -75,7 +82,9 @@ function App() {
     if (params) setUser(params);
   };
   useEffect(() => {
-    if (data) setUser(data);
+    if (data) {
+      setUser(data);
+    }
   }, [data]);
   // Nav
   const [value, setValue] = useState(0);
@@ -115,8 +124,8 @@ function App() {
             <Tab icon={<ContactSupport />} label="SUPPORT" />
             <Tab icon={<ExitToApp />} label="LOG OUT" />
           </Tabs>
-          </div>
-        
+        </div>
+
         <div className={classes.fade_menu}>
           <IconButton
             aria-label="more"
@@ -124,10 +133,9 @@ function App() {
             aria-haspopup="true"
             onClick={handleClick}
           >
-           <Button>More...</Button>
+            <Button>More...</Button>
           </IconButton>
           <Menu
-            
             anchorEl={anchorEl}
             keepMounted
             open={open}
@@ -141,9 +149,9 @@ function App() {
             <MenuItem onClick={handleClose}>About us</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
           </Menu>
-          </div>
+        </div>
       </Paper>
-
+      {/* Nav */}
       {loading && <em>Loading....</em>}
       {error && <em>An error occurs, try again</em>}
       {success && !hasLink && <em>No data</em>}

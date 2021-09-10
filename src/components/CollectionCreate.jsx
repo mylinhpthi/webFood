@@ -39,11 +39,12 @@ function CollectionCreate({ data, onNewData }) {
   };
 
   const handleRemoveItem = (index) => {
+    window.location.reload();
     setItems((prev) => [...prev.slice(0, index), ...prev.slice(index + 1)]);
+    
   };
   const NewData = (params) => {
     onNewData(params);
-    setItems(params.webLinks);
   };
   return (
     <div className={classes.container}>
