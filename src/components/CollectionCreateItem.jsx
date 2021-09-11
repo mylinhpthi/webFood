@@ -1,30 +1,24 @@
 import {
   Button,
-  createTheme,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Fade,
   Grid,
-  IconButton,
   TextField,
   Tooltip,
   withStyles,
 } from "@material-ui/core";
-import { green, purple } from "@material-ui/core/colors";
 import {
   BookTwoTone,
-  CropOriginal,
   LinkTwoTone,
-  PhotoCamera,
 } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
-import useAxios from "axios-hooks";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import CollectionCreateStyleItem from "./CollectionCreateStyleItem";
 const useStyle = makeStyles({
   root: {
     border: "3px solid #fff",
@@ -62,143 +56,49 @@ const useStyle = makeStyles({
   input: {
     margin: "10px auto",
   },
-  text_colors: {
-    display: "flex",
-    margin: "auto ",
-    padding: 0,
-    listStyle: "none",
-    transform: "rotate(45deg)",
-    cursor: "pointer",
-  },
-  text_color: {
-    width: "1em",
-    height: " 1em",
-    borderRadius: "50%",
-    position: " relative",
-    display: "block",
-    "&:nth-child(1)": {
-      transform: "rotate(calc(90deg*1))",
-      transformOrigin: "1.2rem .6rem ",
-    },
-    "&:nth-child(2)": {
-      transform: "rotate(calc(90deg*1))",
-      transformOrigin: "1.1rem .5rem ",
-    },
-    "&:nth-child(3)": {
-      transform: "rotate(calc(90deg*1))",
-      transformOrigin: "-0.05rem 0.1rem ",
-    },
-    "&:nth-child(4)": {
-      transform: "rotate(calc(90deg*1))",
-      transformOrigin: "-.05rem 0rem ",
-    },
-  },
-  style: {
-    display: "flex",
-    justifyContent: "space-around",
-    position: "relative",
-  },
 });
-const LightTooltip = withStyles((theme) => ({
-  tooltip: {
-    backgroundColor: "white",
-    color: "rgba(0, 0, 0, 0.87)",
-    fontSize: 12,
-    boxShadow: "0px 2px 5px #000",
-  },
-}))(Tooltip);
-
-function CollectionCreateItem({ index, onReceive, onNewData, item }) {
+function CollectionCreateItem({ onRemove, onNewData, item }) {
   const classes = useStyle();
   const [formDataLink, setFormDataLink] = useState({});
-  const [{ data: CollectionLink, loading, error }] =
-    useAxios(`LinkCollection/5`);
-  const success = !loading && !error;
-  // Create
-  const [
-    { loading: cLoading, error: cError, response: cResponse },
-    updateLink,
-  ] = useAxios(
-    {
-      url: `LinkCollection/5`,
-      method: "PATCH",
-    },
-    { manual: true }
-  );
-  const cSuccess = cResponse && cResponse.status === 201;
   const handleChange = (field) => (event) =>
     setFormDataLink((prev) => ({
       ...prev,
       [field]: event.target.value,
     }));
-
+    const handleChangeColor = (field, color) => 
+    setFormDataLink((prev) => ({
+      ...prev,
+      [field]: color,
+    }));
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateLink({
-      data: {
-        webLinks: [
-          ...CollectionLink.webLinks.slice(0, index),
-          formDataLink,
-          ...CollectionLink.webLinks.slice(index + 1),
-        ],
-      },
-    }).then((res) => {
-      if (res.status === 200) {
-        onNewData(res.data);
-        // window.location.reload();
-      }
-    });
+    onNewData(formDataLink);
   };
-  const isReady = CollectionLink && success;
-
   const [open, setOpen] = useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleRemove = (bool) => {
-    if (bool === true) {
-      onReceive(index);
-      updateLink({
-        data: {
-          webLinks: [
-            ...CollectionLink.webLinks.slice(0, index),
-            ...CollectionLink.webLinks.slice(index + 1),
-          ],
-        },
-      }).then((res) => {
-        if (res.status === 200) {
-          onNewData(res.data);
-          // window.location.reload();
-        }
-      });
-    }
+    if(bool){
+    onRemove();
     setOpen(false);
+    }
   };
   useEffect(() => {
-    if (isReady) {
-      const { label, link } = item || {};
-      setFormDataLink({ label, link });
+    if (item) {
+      const { label, link, textColor } = item || {};
+      setFormDataLink({ label, link, textColor });
     }
-  }, [isReady]);
-  // Color Text
-  
-  const handleFontColor = (field, color) =>(event)=> {
-      setFormDataLink((prev) => ({
-        ...prev,
-        [field]: color,
-      }));
-      document.getElementById("fontColor").style.background = "#fff"
-      event.target.style.backgroundColor = color
-    };
+  }, [item]);
 
   return (
-    <form key={index} className={classes.root} onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <div className={classes.input}>
         <Grid container alignItems="flex-end">
           <Grid item xs={12}>
             <BookTwoTone className={classes.input__icon} />
             <TextField
+              required
               value={formDataLink["label"] || ""}
               onChange={handleChange("label")}
               type="text"
@@ -212,88 +112,45 @@ function CollectionCreateItem({ index, onReceive, onNewData, item }) {
           <Grid item xs={12}>
             <LinkTwoTone className={classes.input__icon} />
             <TextField
+              required
               value={formDataLink["link"] || ""}
-              type="text"
+              type="url"
               onChange={handleChange("link")}
               name="link"
               style={{ width: "80%" }}
-              placeholder="http://"
+              placeholder="http://*"
             />
           </Grid>
         </Grid>
       </div>
       <div className={classes.input__control}>
-        <div className={classes.style}>
-          <input
-            accept="image/*"
-            style={{ display: "none" }}
-            id="icon-button-file"
-            type="file"
-           />
-          <LightTooltip
-            title="Choose the background image"
-            placement="top"
-            TransitionComponent={Fade}
-            TransitionProps={{ timeout: 600 }}
-          >
-            <label htmlFor="icon-button-file">
-              <IconButton aria-label="upload picture" component="span">
-                <CropOriginal />
-              </IconButton>
-            </label>
-          </LightTooltip>
-          <LightTooltip
-            title="Choose the font color"
-            placement="top"
-            TransitionComponent={Fade}
-            TransitionProps={{ timeout: 600 }}
-          >
-            <ul className={classes.text_colors}>
-              {["#2a7f0e", "#9e3911", "#ff0000", "#ffe500"].map(
-                (color, key) => (
-                  <li
-                    className={classes.text_color}
-                    key={key}
-                    id="fontColor"
-                    style={{
-                      border: "3px solid",
-                      borderColor: color,
-                      background: "#fff",
-                    }}
-                    onClick={handleFontColor("color", color)}
-                  />
-                )
-              )}
-            </ul>
-          </LightTooltip>
-        </div>
+        <CollectionCreateStyleItem onChangeColor ={(color) => handleChangeColor("color", color)}/>
         <Button size="small" variant="contained" onClick={handleClickOpen}>
           Remove
         </Button>
-
         <Dialog
           open={open}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Are you sure remove a item?"}
+            {"Remove this forever?"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Your action will not be undone. Choose "NO" if you want to cancel.
+              Your action will not be undone. Choose "Cancel" if you want to cancel.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={() => handleRemove(false)} color="primary">
-              No
+              Cancel
             </Button>
             <Button
               onClick={() => handleRemove(true)}
               color="primary"
               autoFocus
             >
-              Yes
+              Remove
             </Button>
           </DialogActions>
         </Dialog>

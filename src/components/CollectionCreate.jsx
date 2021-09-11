@@ -1,13 +1,12 @@
 import { Button } from "@material-ui/core";
 import { makeStyles, mergeClasses } from "@material-ui/styles";
+import useAxios from "axios-hooks";
 import React, { useEffect, useState } from "react";
-import CollectionControl from "./CollectionControl";
 import CollectionCreateItem from "./CollectionCreateItem";
 const useStyle = makeStyles({
   control:{
     width: "50%",
     margin: '30px auto',
-    
     "&>Button": {
       padding:'10px',
       border: "1px solid #fff",
@@ -20,8 +19,7 @@ const useStyle = makeStyles({
         background: "#000",
         color:"#fff"
       },
-    }
-    }
+    }}
 });
 function CollectionCreate({ data, onNewData }) {
   const [items, setItems] = useState([]);
@@ -37,14 +35,45 @@ function CollectionCreate({ data, onNewData }) {
         setItems((prev) => [...prev, { label: "", link: "" }]);
       }
   };
-
+  const [
+      { loading: cLoading, error: cError, response: cResponse },
+      createLink,
+    ] = useAxios(
+      {
+        url: `LinkCollection/5`,
+        method: "PATCH",
+      },
+      { manual: true }
+    );
+  const cSuccess = cResponse && cResponse.status === 201;
   const handleRemoveItem = (index) => {
-    window.location.reload();
-    setItems((prev) => [...prev.slice(0, index), ...prev.slice(index + 1)]);
-    
-  };
-  const NewData = (params) => {
-    onNewData(params);
+    createLink({
+      data: {
+        webLinks: [
+          ...items.slice(0, index),
+          ...items.slice(index + 1),
+        ],
+      },
+    }).then((res) => {
+      if (res.status === 200) {
+        onNewData(res.data);
+      }
+    });
+    }
+  const handleUpdateData = (index, itemData) => {
+      createLink({
+      data: {
+        webLinks: [
+          ...items.slice(0, index),
+          itemData,
+          ...items.slice(index + 1),
+        ],
+      },
+    }).then((res) => {
+      if (res.status === 200) {
+        onNewData(res.data);
+      }
+    });
   };
   return (
     <div className={classes.container}>
@@ -57,14 +86,12 @@ function CollectionCreate({ data, onNewData }) {
         items.map((item, index) => (
           <CollectionCreateItem
             key={index}
-            onNewData={NewData}
-            index={index}
-            onReceive={handleRemoveItem}
+            onNewData={(data)=>handleUpdateData(index, data)}
+            onRemove={()=>handleRemoveItem(index)}
             item={item}
           />
         ))}
     </div>
   );
 }
-
 export default CollectionCreate;

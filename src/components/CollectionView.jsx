@@ -3,19 +3,9 @@ import {
   makeStyles,
   Paper,
   createStyles,
-  Theme,
   Typography,
-  Button,
-  Menu,
-  MenuItem,
-  Tooltip,
-  Fade,
-  createTheme,
 } from "@material-ui/core";
-import { purple, yellow } from "@material-ui/core/colors";
-import { withStyles } from "@material-ui/styles";
-import useAxios from "axios-hooks";
-import React, { useState } from "react";
+import React from "react";
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -52,7 +42,6 @@ const useStyles = makeStyles((theme) =>
       background: "#61f450",
       width: "90%",
       position: "relative",
-      textAlign: "center",
       padding: "10px",
       display: "flex",
       flexDirection: "space-around",
@@ -65,24 +54,6 @@ const useStyles = makeStyles((theme) =>
 
 function CollectionView({ data }) {
   const classes = useStyles();
-  const [
-    { loading: cLoading, error: cError, response: cResponse },
-    updateLink,
-  ] = useAxios(
-    {
-      url: `LinkCollection/5`,
-      method: "PATCH",
-    },
-    { manual: true }
-  );
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: yellow[500],
-      },
-      
-    },
-  });
   return (
     <div>
       <Paper className={classes.root}>
@@ -98,7 +69,7 @@ function CollectionView({ data }) {
         {data.webLinks &&
           data.webLinks.map(({ link, label, color, index }) => (
             <div key={index} className={classes.item} spacing={5}>
-              <a className={classes.item__link} href={link} style={{color: theme.palette.primary.light}}>
+              <a className={classes.item__link} href={link} style={{color:color}}>
                 {label}
               </a>
             </div>

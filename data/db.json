@@ -586,17 +586,9 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "Linhhhh",
-          "link": ""
-        },
-        {
           "label": "Linh",
-          "link": ""
-        },
-        {
-          "label": "My Linh",
-          "link": "",
-          "color": "#ffe500"
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
+          "color": "#5ccebf"
         }
       ],
       "socialLinks": [
