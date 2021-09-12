@@ -575,7 +575,7 @@
       "createdAt": "28/08/2020",
       "updateAt": "29/08/2020",
       "avatarURL": "https://picsum.photos/200",
-      "title": "Collection Link ",
+      "title": "Collection ",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "bgColor: string": [
         "blue",
@@ -586,9 +586,8 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "Linh",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
-          "color": "#5ccebf"
+          "label": "My",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
         }
       ],
       "socialLinks": [

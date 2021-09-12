@@ -24,6 +24,7 @@ import {
   ListItemText,
   List,
   Drawer,
+  Avatar,
 } from "@material-ui/core";
 import {
   Apps,
@@ -32,17 +33,18 @@ import {
   NavigateNext,
   Person,
 } from "@material-ui/icons";
+import useAxios from "axios-hooks";
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#ffffff",
-      main: "#e0e0e0",
-      dark: "#aeaeae",
+      light: "#fff",
+      main: "#fff",
+      dark: "#fff",
     },
     secondary: {
-      light: "#484848",
-      main: "#212121",
-      dark: "#000000",
+      light: "#616161",
+      main: "#8e8e8e",
+      dark: "#373737",
     },
   },
 });
@@ -50,7 +52,6 @@ const drawerWidth = 220;
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-    backgroundColor: theme.palette.primary.dark,
   },
   navbar__logo: {
     width: "30%",
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: "20%",
       padding: "5px",
-      minHeight: "50px",
+      height: "50px",
     },
   },
   search: {
@@ -120,8 +121,9 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    border: "1px solid red",
     width: drawerWidth,
+    color: "#fff",
+    backgroundColor: "#8e8e8e",
   },
   drawerHeader: {
     display: "flex",
@@ -130,8 +132,23 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-start",
   },
+  menuItem: {
+    color: "#fff",
+    backgroundColor: "#8e8e8e",
+    "&:hover": {
+      color: "#000",
+    },
+  },
+  profile: {
+    textAlign: "center",
+    padding: "5px",
+  },
+  avatar: {
+    margin: "5px auto",
+  },
 }));
 export default function CollectionNav() {
+  const [{ data }] = useAxios("LinkCollection/5");
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [openDrawer, setOpenDrawer] = React.useState(false);
@@ -160,8 +177,11 @@ export default function CollectionNav() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-        {/*avatar va userName */}
-      <MenuItem>
+      <div className={classes.profile}>
+        <Avatar className={classes.avatar} src={data.avatarURL} />
+        <b>@DavidTruong123</b>
+      </div>
+      <MenuItem className={classes.menuItem}>
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
@@ -173,21 +193,21 @@ export default function CollectionNav() {
           </Badge>
         </IconButton>
       </MenuItem>
-      <MenuItem>
+      <MenuItem className={classes.menuItem}>
         <IconButton color="inherit">
-        <Person />
+          <Person />
         </IconButton>
         <p>MY ACCOUNT</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem className={classes.menuItem}>
         <IconButton color="inherit">
-        <Apps />
+          <Apps />
         </IconButton>
         <p>FEATURES</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem className={classes.menuItem}>
         <IconButton color="inherit">
-        <ExitToApp />
+          <ExitToApp />
         </IconButton>
         <p>LOG OUT</p>
       </MenuItem>
@@ -247,33 +267,36 @@ export default function CollectionNav() {
               >
                 <div className={classes.drawerHeader}>
                   <IconButton onClick={handleDrawerClose}>
-                    <NavigateNext />
+                    <NavigateNext style={{ color: "#fff" }} />
                   </IconButton>
-                  {/* User name, avatar */}
+                  <div className={classes.profile}>
+                    <Avatar className={classes.avatar} src={data.avatarURL} />
+                    <b>@DavidTruong123</b>
+                  </div>
                 </div>
                 <Divider />
                 <List>
                   <ListItem button>
                     <ListItemIcon>
-                      <Person />
+                      <Person style={{ color: "#fff" }} />
                     </ListItemIcon>
                     <ListItemText primary="MY ACCOUNT" />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
-                      <Apps />
+                      <Apps style={{ color: "#fff" }} />
                     </ListItemIcon>
                     <ListItemText primary="FEATURES" />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
-                      <ContactSupport />
+                      <ContactSupport style={{ color: "#fff" }} />
                     </ListItemIcon>
                     <ListItemText primary="SUPPORT" />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
-                      <ExitToApp />
+                      <ExitToApp style={{ color: "#fff" }} />
                     </ListItemIcon>
                     <ListItemText primary="LOG OUT" />
                   </ListItem>

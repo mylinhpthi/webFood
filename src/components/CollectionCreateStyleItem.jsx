@@ -1,22 +1,32 @@
-import { CssBaseline, Fade, FormControl, FormHelperText, IconButton,  MenuItem, Select, Tooltip, useTheme, withStyles } from "@material-ui/core";
+import { Button, CssBaseline, Fade,  IconButton,  MenuItem, Select, Tooltip, useTheme, withStyles } from "@material-ui/core";
 import { ColorLens, CropOriginal, FormatColorText } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
-
+// const theme = createTheme({
+//   palette: {
+//   xxx: {
+//       light: "#616161",
+//       main: "#8e8e8e",
+//       dark: "#373737",
+//       contrastText:"#fff"
+//     },
+//   },
+// });
 const useStyle = makeStyles({
-  colors_text:{
+  stylePicture:{
+    padding:'15px 10px 0px',
+    "&>label>button":{
+      border:'none',
+      background:'transparent',      
+    }
+  },
+  styleText:{
     width:'70px',
-    height:'47px',
+    height:'30px',
     overflow:'hidden',
     borderRadius:'3px',
-    background: "#fff",
-    border:'1px solid #fff',
     zIndex:'1',
-    margin:'5px',
-    "&:hover": {
-      color: "#fff",
-      border:'4px solid #fff',
-    },
+    marginTop:'15px',
   },
   color_text:{
     background: "#fff",
@@ -60,15 +70,14 @@ function CollectionCreateStyleItem({onChangeColor}) {
   const classes = useStyle();
   const theme = useTheme();
   const handleChangeColor = (event)=> {
-    
     setColor(event.target.value)
     onChangeColor(event.target.value);
-    // event.target.style.backgroundColor = color
   };
  const [color, setColor] = useState("#000")
   return (
     <div className={classes.style}>
       <CssBaseline />
+      <div className={classes.stylePicture}>
       <input
         accept="image/*"
         style={{ display: "none" }}
@@ -82,33 +91,33 @@ function CollectionCreateStyleItem({onChangeColor}) {
         TransitionProps={{ timeout: 10 }}
       >
         <label htmlFor="icon-button-file">
-          <IconButton aria-label="upload picture" component="span">
+          <button aria-label="upload picture"  component="span">
             <CropOriginal />
-          </IconButton>
+          </button>
         </label>
       </LightTooltip>
-        <Select
-        variant="outlined"
-        className={classes.colors_text}
-          value={color}
-          onChange={handleChangeColor}
+      </div>
+      <Select
+        // variant="outlined"
+        className={classes.styleText}
+        value={color}
+        onChange={handleChangeColor}
           MenuProps={MenuProps}
           IconComponent="false"
           displayEmpty
         >
-          <MenuItem className={classes.color_text} value="#000" disabled><ColorLens /></MenuItem>
+          <MenuItem value="#000" disabled><ColorLens /></MenuItem>
           {colors.map((color, key) => (
             <MenuItem
-            className={classes.color_text}
+            // className={classes.colorText}
               key={key}
               value={color}
-              // onClick={handleFontColor(color)}
             >
               <ColorLens style={{color:color }} />
             </MenuItem>
           ))}
         </Select> 
-    </div>
+      </div>
   );
 }
 

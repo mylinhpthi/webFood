@@ -4,22 +4,55 @@ import {
   Paper,
   createStyles,
   Typography,
+  CardMedia,
 } from "@material-ui/core";
+import logo from "./images/LinkHub.PNG";
 import React from "react";
+// const theme = createTheme({
+//   palette: {
+//     primary:{
+//       light: "#fff",
+//       main: "#fff",
+//       dark: "#fff",
+//     },
+//     secondary: {
+//       light: "#616161",
+//       main: "#8e8e8e",
+//       dark: "#373737",
+//     },
+//   },
+// });
 const useStyles = makeStyles((theme) =>
   createStyles({
+    view:{
+      display:'flex',
+      flexDirection:'column',
+    },
+    linkhub:{
+      textAlign:'center',
+      padding:'10px',
+      width:'90%',
+      margin:'auto',
+      fontSize:18,
+      background:'#fff',
+      boxShadow:
+      "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",  
+    },
     root: {
+      display:'none',
+      [theme.breakpoints.up("sm")]:{
       display: "flex",
+      position:'relative',
       flexDirection: "column",
-      border: "8px solid #fff",
-      margin: "20px auto",
+      border: "8px solid #000",
+      margin: "20px auto 0",
       width: "250px",
-      height: "500px",
-      padding: "10px",
+      height:'500px',
+      padding: "10px 10px 0",
       borderRadius: "30px",
       backgroundImage:
-        "linear-gradient( to bottom,#ccff00,#d8f28c,#d5f7be ,#ebfce0 )",
-    },
+        "linear-gradient( to bottom,#fff,#fff9c4,#ffff5a,#ffff00 )",
+    }},
     avatar: {
       alignItems: "center",
       margin: "10px auto",
@@ -27,26 +60,21 @@ const useStyles = makeStyles((theme) =>
       height: theme.spacing(10),
     },
     title: {
-      marginBottom: "2rem",
-    },
-    item__link: {
-      textDecoration: "none",
-      color: "black",
-      fontWeight: "bold",
-      width: "80%",
-      letterSpacing: "1px",
+      marginBottom: "1.5rem",
     },
     item: {
-      margin: "10px auto",
+      margin: "5px auto",
       textAlign: "center",
-      background: "#61f450",
+      background: "#fff",
+      boxShadow:
+      "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
       width: "90%",
-      position: "relative",
       padding: "10px",
-      display: "flex",
-      flexDirection: "space-around",
       "&>a": {
-        fontSize: "18px",
+        fontSize: "16px",
+        textDecoration: "none",
+      fontWeight: "bold",
+      width: "80%",
       },
     },
   })
@@ -55,7 +83,11 @@ const useStyles = makeStyles((theme) =>
 function CollectionView({ data }) {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.view}>
+      <div className={classes.linkhub}>
+       <b>LinkHub: </b>
+       <u>https://linkhub/davidTruong</u>
+      </div>
       <Paper className={classes.root}>
         <Avatar className={classes.avatar} src={data.avatarURL} />
         <Typography
@@ -73,7 +105,7 @@ function CollectionView({ data }) {
                 {label}
               </a>
             </div>
-          ))}
+          ))} 
       </Paper>
     </div>
   );
