@@ -1,15 +1,24 @@
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import useAxios from "axios-hooks";
 import React, { useEffect, useState } from "react";
 import CollectionCreate from "./CollectionCreate";
-import CollectionView from "./CollectionView";
+import CollectionView from "../CollectionView";
+import { Grid } from '@material-ui/core';
+import { ErrorOutline } from '@material-ui/icons';
 const useStyle = makeStyles((them) => ({
   root: {
     width: "100%",
     margin: " 20px auto",
   },
+  create:{
+    marginTop:'2.5rem',
+  },
   view: {
     maxHeight: "600px",
+    marginTop:'3.5rem',
+    [them.breakpoints.down("sm")]: {
+      marginTop:'0',
+    },
   },
 }));
 function CollectionWebLink() {
@@ -33,8 +42,18 @@ function CollectionWebLink() {
           <div id="loader"></div>
         </div>
       )}
-      {error && <em style={{textAlign:'center'}}>An error occurs, try again</em>}
-      {success && !hasLink && <em style={{textAlign:'center'}}>No data</em>}
+      {error && 
+        <div id="error">
+        <ErrorOutline className="errorIcon"/>
+        <h4>Sorry something when wrong.</h4>
+      </div>
+      }
+      {success && !hasLink && 
+      <div id="error">
+      <ErrorOutline className="errorIcon"/>
+      <h4>Sorry something when wrong.</h4>
+      </div>
+      }
       {success && hasLink && (
         <Grid
           container

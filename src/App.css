@@ -69,3 +69,14 @@
         transform: rotate(360deg);
     }
 }
+#error{
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+#error .errorIcon{
+    font-size: 5rem;
+}

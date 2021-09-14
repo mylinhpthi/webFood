@@ -586,29 +586,73 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "My",
+          "label": "Dethuong",
           "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
+        },
+        {
+          "label": "Hahah",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
+        },
+        {
+          "label": "Hello",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
+        },
+        {
+          "label": "Hi",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121",
+          "color": "#ff0026"
         }
       ],
       "socialLinks": [
         {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
+          "type": "Facebook",
+          "link": "",
+          "color": "blue"
         },
         {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
+          "type": "Email",
+          "link": "",
+          "color": "lightblue"
+        },
+        {
+          "type": "Twitter",
+          "link": "",
+          "color": "lightblue"
+        },
+        {
+          "type": "Instagram",
+          "link": "",
+          "color": "daskorange"
+        },
+        {
+          "link": "https://www.youtube.com/watch?v=DFYRQ_zQ-gk",
+          "type": "Youtube",
           "color": "lightblue",
           "clickCount": 95
         },
         {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
+          "link": "https://soundcloud.com/ilyao/lyao-lj-mtx-and-lj-mtxs-hair",
+          "type": "Soundcloud",
+          "color": "lightblue",
           "clickCount": 95
-        }
+        },
+        {
+          "type": "LinkedIn",
+          "link": "http://dodgelinkedinom/someDodgeAddress",
+          "color": "lightblue"
+        },
+        {
+          "type": "WhatsApp",
+          "link": "https://chatwhatsapp.com/FrTz7HJfmKjAROYZsfDrKQ",
+          "color": "lightblue"
+        },
+        {
+          "link": "@$1",
+          "type": "TikTok",
+          "color": "lightblue",
+          "clickCount": 95
+        },
+        {}
       ],
       "visitCount": 100
     },
