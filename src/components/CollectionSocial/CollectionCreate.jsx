@@ -50,6 +50,7 @@ const useStyle = makeStyles((them) => ({
    "&>:hover": {
       background: "#000",
       color: "#fff",
+      padding:' 0 10px'
     },
   },
 }));
@@ -70,7 +71,6 @@ function CollectionCreate({ data, onNewData }) {
     if (data) setItems(data.socialLinks);
   }, [data]);
   const [
-    { loading: cLoading, error: cError, response: cResponse },
     createLink,
   ] = useAxios(
     {
@@ -79,7 +79,6 @@ function CollectionCreate({ data, onNewData }) {
     },
     { manual: true }
   );
-  const cSuccess = cResponse && cResponse.status === 201;
   const handleUpdateData = (index, itemData) => {
     createLink({
       data: {
@@ -109,7 +108,7 @@ function CollectionCreate({ data, onNewData }) {
           TransitionProps={{ timeout: 10 }}
         >
           <Box className={classes.btnSocialLink}>
-           <Link to="/">
+           <Link to="/web">
            <BlurLinear className={classes.contentIcon} />
            </Link></Box>
         </LightTooltip>

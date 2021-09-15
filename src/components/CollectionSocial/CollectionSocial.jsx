@@ -18,7 +18,7 @@ const useStyle = makeStyles((them) => ({
   },
   view: {
     maxHeight: "600px",
-    marginTop: "40px",
+    marginTop: "45px",
     [them.breakpoints.down("sm")]: {
       margin: "10px auto",
     },

@@ -23,9 +23,10 @@ import {
   Person,
 } from "@material-ui/icons";
 import useAxios from "axios-hooks";
+import { Link } from "react-router-dom";
 const drawerWidth = 220;
 const useStyles = makeStyles((theme) => ({
-    sectionDesktop: {
+  sectionDesktop: {
     display: "none",
     [theme.breakpoints.up("md")]: {
       display: "flex",
@@ -76,82 +77,83 @@ export default function NavbarDesktop() {
   };
   const handleDrawerClose = () => {
     setOpenDrawer(false);
-  };    
-    return (
-        <div>
-            {success && (
-                <div className={classes.sectionDesktop}>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                  <Badge badgeContent={4} color="error">
-                    <MailIcon />
-                  </Badge>
-                </IconButton>
-                <IconButton
-                  aria-label="show 17 new notifications"
-                  color="inherit"
-                >
-                  <Badge badgeContent={17} color="error">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="end"
-                  onClick={handleDrawerOpen}
-                  className={clsx(openDrawer && classes.hide)}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Drawer
-                  className={classes.drawer}
-                  variant="persistent"
-                  anchor="right"
-                  open={openDrawer}
-                  classes={{
-                    paper: classes.drawerPaper,
-                  }}
-                >
-                  <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                      <NavigateNext style={{ color: "#fff" }} />
-                    </IconButton>
-                    <div className={classes.profile}>
-                      <Avatar className={classes.avatar} src={data.avatarURL} />
-                      <b>@DavidTruong123</b>
-                    </div>
-                  </div>
-                  <Divider />
-                  <List>
-                    <ListItem button>
-                      <ListItemIcon>
-                        <Person style={{ color: "#fff" }} />
-                      </ListItemIcon>
-                      <ListItemText primary="MY ACCOUNT" />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemIcon>
-                        <Apps style={{ color: "#fff" }} />
-                      </ListItemIcon>
-                      <ListItemText primary="FEATURES" />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemIcon>
-                        <ContactSupport style={{ color: "#fff" }} />
-                      </ListItemIcon>
-                      <ListItemText primary="SUPPORT" />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemIcon>
-                        <ExitToApp style={{ color: "#fff" }} />
-                      </ListItemIcon>
-                      <ListItemText primary="LOG OUT" />
-                    </ListItem>
-                  </List>
-                </Drawer>
+  };
+  return (
+    <div>
+      {success && (
+        <div className={classes.sectionDesktop}>
+          <IconButton aria-label="show 4 new mails" color="inherit">
+            <Badge badgeContent={4} color="error">
+              <MailIcon />
+            </Badge>
+          </IconButton>
+          <IconButton aria-label="show 17 new notifications" color="inherit">
+            <Badge badgeContent={17} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerOpen}
+            className={clsx(openDrawer && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="right"
+            open={openDrawer}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <div className={classes.drawerHeader}>
+              <IconButton onClick={handleDrawerClose}>
+                <NavigateNext style={{ color: "#fff" }} />
+              </IconButton>
+              <div className={classes.profile}>
+                <Avatar className={classes.avatar} src={data.avatarURL} />
+                <b>@DavidTruong123</b>
               </div>
-          
-            )}
+            </div>
+            <Divider />
+            <List>
+              <Link
+                to="/user"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                <ListItem button>
+                  <ListItemIcon>
+                    <Person style={{ color: "#fff" }} />
+                  </ListItemIcon>
+                  <ListItemText primary="MY ACCOUNT" />
+                </ListItem>
+              </Link>
+              <ListItem button>
+                <ListItemIcon>
+                  <Apps style={{ color: "#fff" }} />
+                </ListItemIcon>
+                <ListItemText primary="FEATURES" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <ContactSupport style={{ color: "#fff" }} />
+                </ListItemIcon>
+                <ListItemText primary="SUPPORT" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <ExitToApp style={{ color: "#fff" }} />
+                </ListItemIcon>
+                <ListItemText primary="LOG OUT" />
+              </ListItem>
+            </List>
+          </Drawer>
         </div>
-    );
+      )}
+    </div>
+  );
 }

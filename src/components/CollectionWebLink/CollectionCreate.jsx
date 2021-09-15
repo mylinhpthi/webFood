@@ -56,17 +56,13 @@ function CollectionCreate({ data, onNewData }) {
       setItems((prev) => [...prev, { label: "", link: "" }]);
     }
   };
-  const [
-    { loading: cLoading, error: cError, response: cResponse },
-    createLink,
-  ] = useAxios(
+  const [createLink] = useAxios(
     {
       url: `LinkCollection/5`,
       method: "PATCH",
     },
     { manual: true }
   );
-  const cSuccess = cResponse && cResponse.status === 201;
   const handleRemoveItem = (index) => {
     createLink({
       data: {

@@ -1,9 +1,7 @@
 import {
   CssBaseline,
   MenuItem,
-  Select,
-  Tooltip,
-  withStyles,
+  Select
 } from "@material-ui/core";
 import { ColorLens } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";

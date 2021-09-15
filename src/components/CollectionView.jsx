@@ -7,7 +7,7 @@ import {
   Box,
   Tooltip,
   Fade,
-  withStyles
+  withStyles,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) =>
     linkhub: {
       textAlign: "center",
       padding: "10px",
-      width: "90%",
+      width: "100%",
       margin: "auto",
       fontSize: "1.2rem",
       background: "#fff",
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) =>
     items_SocialLink: {
       margin: "1rem auto",
       textAlign: "center",
-      width:'90%'
+      width: "90%",
     },
   })
 );
@@ -97,74 +97,80 @@ const LightTooltip = withStyles((theme) => ({
 function CollectionView({ data }) {
   const classes = useStyles();
   const iconArray = {
-    Facebook: <Facebook style={{ color:'blue' }}/>,
-    Email: <MailOutline style={{ color:'red' }}/>,
-    Twitter: <Twitter style={{ color:'#27aae1' }}/>,
-    Instagram: <Instagram style={{ color:'orange' }}/>,
-    Youtube: <YouTube style={{ color:'red' }}/>,
-    Soundcloud: <SurroundSound style={{ color:'green' }}/>,
-    LinkedIn: <LinkedIn style={{ color:'#27aae1' }}/>,
-    WhatsApp: <WhatsApp style={{ color:'green' }}/>,
-    TikTok: <MusicNote style={{ color:'#000' }}/>,
-    Amazon: <Spellcheck style={{ color:'#000' }}/>,
+    Facebook: <Facebook style={{ color: "blue" }} />,
+    Email: <MailOutline style={{ color: "red" }} />,
+    Twitter: <Twitter style={{ color: "#27aae1" }} />,
+    Instagram: <Instagram style={{ color: "orange" }} />,
+    Youtube: <YouTube style={{ color: "red" }} />,
+    Soundcloud: <SurroundSound style={{ color: "green" }} />,
+    LinkedIn: <LinkedIn style={{ color: "#27aae1" }} />,
+    WhatsApp: <WhatsApp style={{ color: "green" }} />,
+    TikTok: <MusicNote style={{ color: "#000" }} />,
+    Amazon: <Spellcheck style={{ color: "#000" }} />,
   };
   return (
-    <div className={classes.view}>
-      <div className={classes.linkhub}>
-        <b>LinkHub: </b>
-        <u>https://linkhub/davidTruong</u>
-      </div>
-      <Paper className={classes.root}>
-        <Avatar className={classes.avatar} src={data.avatarURL} />
-        <Typography
-          className={classes.title}
-          variant="h6"
-          align="center"
-          gutterBottom
-        >
-          @{data.title}
-        </Typography>
-        {data.webLinks &&
-          data.webLinks.map(({ link, label, color, index }) => {
-            if (link)
-              return (
-                <div key={index} className={classes.items_WebLink} spacing={5}>
-                  <a
-                    className={classes.item_WebLink}
-                    href={link}
-                    style={{ color: color }}
-                  >
-                    {label}
-                  </a>
-                </div>
-              );
-          })}
-        <Grid
-          container
-          component={Box}
-          className={classes.items_SocialLink}
-          justifyContent="center"
-        >
-          {data.socialLinks &&
-            data.socialLinks.map(({ link, type, index }) => {
-              if (link)
-                return (
-                  <LightTooltip
-                    title={type}
-                    placement="top"
-                    TransitionComponent={Fade}
-                    TransitionProps={{ timeout: 10 }}
-                  >
-                    <Grid item key={index} xs="2">
-                      <a href={link}>
-                        {iconArray[type]}
+    <div>
+      {data && (
+        <div className={classes.view}>
+          <div className={classes.linkhub}>
+            <b>LinkHub: </b>
+            <u>https://linkhub/davidTruong</u>
+          </div>
+          <Paper className={classes.root}>
+            <Avatar className={classes.avatar} src={data?.avatarURL} />
+            <Typography
+              className={classes.title}
+              variant="h6"
+              align="center"
+              gutterBottom
+            >
+              @{data?.title}
+            </Typography>
+            {data.webLinks &&
+              data.webLinks.map(({ link, label, color, index }) => {
+                if (link)
+                  return (
+                    <div
+                      key={index}
+                      className={classes.items_WebLink}
+                      spacing={5}
+                    >
+                      <a
+                        className={classes.item_WebLink}
+                        href={link}
+                        style={{ color: color }}
+                      >
+                        {label}
                       </a>
-                    </Grid>
-                  </LightTooltip>
-                );
-            })}
-        </Grid>
-      </Paper>
+                    </div>
+                  );
+              })}
+            <Grid
+              container
+              component={Box}
+              className={classes.items_SocialLink}
+              justifyContent="center"
+            >
+              {data.socialLinks &&
+                data.socialLinks.map(({ link, type, index }) => {
+                  if (link)
+                    return (
+                      <LightTooltip
+                        title={type}
+                        placement="top"
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 10 }}
+                      >
+                        <Grid item key={index} xs="2">
+                          <a href={link}>{iconArray[type]}</a>
+                        </Grid>
+                      </LightTooltip>
+                    );
+                })}
+            </Grid>
+          </Paper>
+        </div>
+      )}
     </div>
   );
 }

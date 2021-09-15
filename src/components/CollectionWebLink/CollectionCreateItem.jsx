@@ -199,7 +199,7 @@ function CollectionCreateItem({ onRemove, onNewData, item }) {
               <Button onClick={() => handleRemove(false)} color="primary">
                 Cancel
               </Button>
-              <Button onClick={() => handleRemove(true)}>Delete</Button>
+              <Button onClick={() => handleRemove(true)} autoFocus>Delete</Button>
             </DialogActions>
           </Dialog>
           <LightTooltip

@@ -6,11 +6,11 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import {
   createTheme,
-  ThemeProvider,
-  Typography,
+  ThemeProvider
 } from "@material-ui/core";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
+import { Link } from "react-router-dom";
 const theme = createTheme({
   palette: {
     secondary: {
@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
+      fontSize:'1.5rem',
+      textDecoration:'none',
+      color:'#fff',
     },
   },
   search: {
@@ -74,9 +77,10 @@ function CollectionNav() {
       <div className={classes.grow}>
         <AppBar color="secondary" position="static">
           <Toolbar>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Link to ="/" className={classes.title}>
               LINK HUB
-            </Typography>
+             </Link>
+            
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />

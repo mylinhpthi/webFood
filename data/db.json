@@ -586,21 +586,28 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "Dethuong",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Hahah",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Hello",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Hi",
+          "label": "Social",
           "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121",
+          "color": "#048c48"
+        },
+        {
+          "label": "Web",
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
           "color": "#ff0026"
+        },
+        {
+          "label": "Collection",
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
+          "color": "#048c48"
+        },
+        {
+          "label": "Linh",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
+        },
+        {
+          "label": "Da xong",
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
+          "color": "#ffff00"
         }
       ],
       "socialLinks": [
@@ -625,34 +632,30 @@
           "color": "daskorange"
         },
         {
-          "link": "https://www.youtube.com/watch?v=DFYRQ_zQ-gk",
           "type": "Youtube",
-          "color": "lightblue",
-          "clickCount": 95
+          "link": "",
+          "color": "lightblue"
         },
         {
-          "link": "https://soundcloud.com/ilyao/lyao-lj-mtx-and-lj-mtxs-hair",
           "type": "Soundcloud",
-          "color": "lightblue",
-          "clickCount": 95
+          "link": "",
+          "color": "lightblue"
         },
         {
           "type": "LinkedIn",
-          "link": "http://dodgelinkedinom/someDodgeAddress",
+          "link": "",
           "color": "lightblue"
         },
         {
           "type": "WhatsApp",
-          "link": "https://chatwhatsapp.com/FrTz7HJfmKjAROYZsfDrKQ",
+          "link": "",
           "color": "lightblue"
         },
         {
-          "link": "@$1",
           "type": "TikTok",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {}
+          "link": "",
+          "color": "lightblue"
+        }
       ],
       "visitCount": 100
     },
