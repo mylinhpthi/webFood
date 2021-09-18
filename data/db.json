@@ -586,28 +586,23 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "Social",
+          "label": "MyLinh",
           "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121",
-          "color": "#048c48"
-        },
-        {
-          "label": "Web",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
           "color": "#ff0026"
         },
         {
-          "label": "Collection",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
-          "color": "#048c48"
-        },
-        {
-          "label": "Linh",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Da xong",
+          "label": "asss",
           "link": "https://material-ui.com/components/material-icons/#material-icons",
           "color": "#ffff00"
+        },
+        {
+          "label": "1",
+          "link": "https://material-ui.com/components/material-icons/#material-icons"
+        },
+        {
+          "label": "My",
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
+          "color": "#d6d5d4"
         }
       ],
       "socialLinks": [
@@ -623,12 +618,12 @@
         },
         {
           "type": "Twitter",
-          "link": "",
+          "link": "@MyLinh",
           "color": "lightblue"
         },
         {
           "type": "Instagram",
-          "link": "",
+          "link": "@MyLINH",
           "color": "daskorange"
         },
         {

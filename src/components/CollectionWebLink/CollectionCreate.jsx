@@ -56,7 +56,7 @@ function CollectionCreate({ data, onNewData }) {
       setItems((prev) => [...prev, { label: "", link: "" }]);
     }
   };
-  const [createLink] = useAxios(
+  const [{loading: cLoading, error: cError,response: cResponse},createLink] = useAxios(
     {
       url: `LinkCollection/5`,
       method: "PATCH",
