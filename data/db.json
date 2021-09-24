@@ -586,23 +586,25 @@
       "bgImageURL": "https://picsum.photos/200",
       "webLinks": [
         {
-          "label": "MyLinh",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121",
+          "label": "My Linh",
+          "link": "https://material-ui.com/components/material-icons/#material-icons",
           "color": "#ff0026"
         },
         {
-          "label": "asss",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
-          "color": "#ffff00"
+          "label": "ssssss",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
         },
         {
-          "label": "1",
-          "link": "https://material-ui.com/components/material-icons/#material-icons"
+          "label": "Linhhisss",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
         },
         {
-          "label": "My",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
-          "color": "#d6d5d4"
+          "label": "bbbbbbbbb",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
+        },
+        {
+          "label": "Linh",
+          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
         }
       ],
       "socialLinks": [
@@ -613,7 +615,7 @@
         },
         {
           "type": "Email",
-          "link": "",
+          "link": "linh@gmail.com",
           "color": "lightblue"
         },
         {
@@ -628,7 +630,7 @@
         },
         {
           "type": "Youtube",
-          "link": "",
+          "link": "a",
           "color": "lightblue"
         },
         {
