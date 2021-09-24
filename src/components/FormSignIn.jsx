@@ -17,11 +17,14 @@ const useStyles = makeStyles((them) =>
     root: {
       display: "flex",
       width: "70vw",
-      height: "90vh",
       margin: "2rem auto",
       border: "0px groove #514242",
       background: "#fff",
       boxShadow: "5px 5px 2px #e0e0e0",
+      [them.breakpoints.down("md")]: {
+        boxShadow: "0px 5px 2px #e0e0e0",
+        minHeight:'70vh'
+      },
     },
     bgImage: {
       width: "50%",
@@ -38,9 +41,6 @@ const useStyles = makeStyles((them) =>
       width: "40%",
       margin: "auto",
       maxHeight: "500px",
-      position: "relative",
-      float: "right",
-      right: "1em",
       display: "flex",
       flexDirection: "column",
       [them.breakpoints.down("md")]: {
@@ -59,12 +59,19 @@ const useStyles = makeStyles((them) =>
       flexDirection: "column",
       margin: "auto",
       width: "90%",
+      [them.breakpoints.down("md")]: {
+        width: "70%",
+      },
     },
     _sub: {
       display: "flex",
       justifyContent: "space-between",
       margin: "10px auto",
       width: "90%",
+      [them.breakpoints.down("md")]: {
+        width: "70%",
+        margin: "15px auto",
+      },
     },
     _signUp: {
       display: "flex",
@@ -84,6 +91,10 @@ const useStyles = makeStyles((them) =>
         color: "#000",
         background: "#76ff03",
       },
+      [them.breakpoints.down("md")]: {
+        width: "30%",
+        margin: "10px auto",
+      },  
     },
     __link: {
       fontWeight: 500,

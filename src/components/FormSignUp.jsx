@@ -20,16 +20,17 @@ const useStyles = makeStyles((them) =>
     root: {
       display: "flex",
       width: "80vw",
-      height: "90vh",
-      margin: "2rem auto",
-      border: "0px groove #514242",
+      margin: "1rem auto",
       background: "#fff",
       boxShadow: "5px 5px 2px #e0e0e0",
+      [them.breakpoints.down("md")]: {
+        boxShadow: "0px 5px 2px #e0e0e0",
+      },
     },
     bgImage: {
       width: "50%",
       height: "80vh",
-      margin:'auto',
+      margin: "auto",
       backgroundImage: `url(${background})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
@@ -40,14 +41,11 @@ const useStyles = makeStyles((them) =>
     container: {
       width: "40%",
       margin: "auto",
-      maxHeight: "90vh",
-      position: "relative",
-      float: "left",
-      left: "1em",
+      height: "100%",
       display: "flex",
       flexDirection: "column",
       [them.breakpoints.down("md")]: {
-        width: "90vw",
+        width: "90%",
       },
     },
     _header: {
@@ -55,9 +53,21 @@ const useStyles = makeStyles((them) =>
       margin: 0,
       textAlign: "center",
       color: "#000",
-      "&>p": {
-        fontSize: "1rem",
-        margin: "0 0 1rem 0",
+    },
+    __subTitle: {
+      fontSize: "1rem",
+      margin: "0 0 1rem 0",
+      [them.breakpoints.down("md")]: {
+        margin: "0 0 .5rem 0",
+      },
+      opacity: 0.8,
+    },
+    __title: {
+      fontSize: "2rem",
+      fontWeight: 800,
+      margin: "10px 0 0 0",
+      [them.breakpoints.down("md")]: {
+        fontSize: "1.5rem",
       },
     },
     _main: {
@@ -66,9 +76,14 @@ const useStyles = makeStyles((them) =>
       margin: "auto",
       width: "90%",
       "&>*": {
-        margin: "5px 0",
+        width: "90%",
+        margin: ".5rem auto",
+        [them.breakpoints.down("md")]: {
+          width: "70%",
+        },
       },
     },
+
     _signIn: {
       display: "flex",
       margin: "auto",
@@ -77,7 +92,7 @@ const useStyles = makeStyles((them) =>
       width: "40%",
       fontSize: "1rem",
       background: "#1faa00",
-      margin: "auto",
+      margin: "10px auto 0",
       color: "#fff",
       "&:hover": {
         color: "#000",
@@ -124,10 +139,8 @@ function FormSignUp() {
       <CssBaseline />
       <form className={classes.container}>
         <div className={classes._header}>
-          <Typography variant="h4" gutterBottom component="div">
-            Sign Up
-          </Typography>
-          <p>It's only takes a minute</p>
+          <p className={classes.__title}>Sign Up</p>
+          <p className={classes.__subTitle}>It's only takes a minute</p>
         </div>
         <div className={classes._main}>
           <TextField
@@ -135,30 +148,30 @@ function FormSignUp() {
             label="First Name"
             variant="outlined"
             color="secondary"
+            size="small"
           />
           <TextField
             id="outlined-basic"
             color="secondary"
             label="Last Name"
             variant="outlined"
+            size="small"
           />
           <TextField
             id="outlined-basic"
             color="secondary"
             label="Email"
             variant="outlined"
+            size="small"
           />
-          <FormControl variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">
-              Password
-            </InputLabel>
-            <OutlinedInput
-              color="secondary"
-              id="outlined-adornment-password"
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
-              onChange={handleChange("password")}
-              endAdornment={
+          <TextField
+            label="Password"
+            id="outlined-end-adornment"
+            type={values.showPassword ? "text" : "password"}
+            value={values.password}
+            onChange={handleChange("password")}
+            InputProps={{
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
@@ -169,21 +182,20 @@ function FormSignUp() {
                     {values.showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-              }
-              label="Password"
-            />
-          </FormControl>
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-resetPassword">
-              Confirm password
-            </InputLabel>
-            <OutlinedInput
-              color="secondary"
-              id="outlined-adornment-resetPassword"
-              type={values.showResetPassword ? "text" : "password"}
-              value={values.resetPassword}
-              onChange={handleChange("resetPassword")}
-              endAdornment={
+              ),
+            }}
+            variant="outlined"
+            size="small"
+            color="secondary"
+          />
+          <TextField
+            label="Confirm password"
+            id="outlined-end-adornment"
+            type={values.showResetPassword ? "text" : "password"}
+            value={values.resetPassword}
+            onChange={handleChange("resetPassword")}
+            InputProps={{
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
@@ -198,10 +210,12 @@ function FormSignUp() {
                     )}
                   </IconButton>
                 </InputAdornment>
-              }
-              label="Confirm password"
-            />
-          </FormControl>
+              ),
+            }}
+            variant="outlined"
+            size="small"
+            color="secondary"
+          />
         </div>
         <Button className={classes._btn}>Sign Up</Button>
         <div className={classes._signIn}>
