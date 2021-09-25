@@ -9,7 +9,6 @@ import {
 import { createStyles } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import background from "../images/bgImg.png";
 import { Link } from "react-router-dom";
 import { Person, Visibility, VisibilityOff } from "@material-ui/icons";
 const useStyles = makeStyles((them) =>
@@ -30,7 +29,7 @@ const useStyles = makeStyles((them) =>
       width: "50%",
       height: "80vh",
       margin: "auto 0",
-      backgroundImage: `url(${background})`,
+      backgroundImage: `url("/images/bgImg.png")`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       [them.breakpoints.down("md")]: {
@@ -78,7 +77,7 @@ const useStyles = makeStyles((them) =>
       margin: "auto",
     },
     __subtext: {
-      fontSize: ".8rem",
+      fontSize: ".9rem",
       marginRight: "5px",
     },
     _btn: {
@@ -181,8 +180,8 @@ function FormSignIn() {
 
         <div className={classes._sub}>
           <div className={classes.__subtext}>
-            <input type="checkbox" style={{ color: "green" }} />
-            <label for="radio1">Remember me</label>
+            <input type="checkbox" id='checkbox' />
+            <label for="checkbox" style={{marginLeft:'5px' }}>Remember me</label>
           </div>
           <Link className={classes.__link}>Forgot password?</Link>
         </div>

@@ -13,7 +13,6 @@ import { Person, Visibility, VisibilityOff } from "@material-ui/icons";
 import { createStyles } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
-import background from "../images/bg.png";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles((them) =>
   createStyles({
@@ -31,7 +30,7 @@ const useStyles = makeStyles((them) =>
       width: "50%",
       height: "80vh",
       margin: "auto",
-      backgroundImage: `url(${background})`,
+      backgroundImage: `url("/images/bg.png")`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       [them.breakpoints.down("md")]: {

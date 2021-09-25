@@ -8,8 +8,9 @@ import {
   Route
 } from "react-router-dom";
 import { useEffect, useState } from "react";
-import FormSignIn from "./components/FormSignIn";
-import FormSignUp from "./components/FormSignUp";
+import FormSignIn from "./components/Form/FormSignIn";
+import FormSignUp from "./components/Form/FormSignUp";
+import Header from "./components/Header/Header";
 
 // const axios = Axios.create({
 //   baseURL: "http://localhost:8000/",
@@ -30,6 +31,7 @@ function App() {
   return (
     <Router>
       <div>
+        <Header />
         <Switch>
           <Route path="/signIn">
             <FormSignIn />
