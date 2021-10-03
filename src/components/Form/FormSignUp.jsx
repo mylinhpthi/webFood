@@ -1,15 +1,16 @@
 import {
   Button,
   CssBaseline,
-  FormControl,
   IconButton,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
   TextField,
-  Typography,
 } from "@material-ui/core";
-import { Person, Visibility, VisibilityOff } from "@material-ui/icons";
+import {
+  ArrowForward,
+  Person,
+  Visibility,
+  VisibilityOff,
+} from "@material-ui/icons";
 import { createStyles } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
@@ -17,57 +18,57 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((them) =>
   createStyles({
     root: {
+      width:'720px',
+      height:'512px',
       display: "flex",
-      width: "80vw",
+      position:'relative',
       margin: "1rem auto",
-      background: "#fff",
-      boxShadow: "5px 5px 2px #e0e0e0",
-      [them.breakpoints.down("md")]: {
-        boxShadow: "0px 5px 2px #e0e0e0",
-      },
+      // boxShadow: "5px 5px 2px #e0e0e0",
+      // [them.breakpoints.down("md")]: {
+      //   boxShadow: "0px 5px 2px #e0e0e0",
+      // },
     },
     bgImage: {
-      width: "50%",
-      height: "80vh",
+      width:'720px',
+      height:'512px',
       margin: "auto",
-      backgroundImage: `url("/images/bg.png")`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "contain",
-      [them.breakpoints.down("md")]: {
-        display: "none",
-      },
+      // [them.breakpoints.down("md")]: {
+      //   display: "none",
+      // },
     },
     container: {
-      width: "40%",
-      margin: "auto",
-      height: "100%",
+      position:'absolute',
+      width:'350px',
+      margin: "0 2.5rem",
+      height:'450px',
       display: "flex",
+      alignItems:'center',
       flexDirection: "column",
       [them.breakpoints.down("md")]: {
         width: "90%",
       },
+      
     },
     _header: {
       display: "inline-block",
-      margin: 0,
+      marginTop: '3rem',
       textAlign: "center",
       color: "#000",
     },
     __subTitle: {
       fontSize: "1rem",
-      margin: "0 0 1rem 0",
-      [them.breakpoints.down("md")]: {
-        margin: "0 0 .5rem 0",
-      },
+      // [them.breakpoints.down("md")]: {
+      //   margin: "0 0 .5rem 0",
+      // },
       opacity: 0.8,
     },
     __title: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
       fontWeight: 800,
-      margin: "10px 0 0 0",
-      [them.breakpoints.down("md")]: {
-        fontSize: "1.5rem",
-      },
+      marginTop: "10px",
+      // [them.breakpoints.down("md")]: {
+      //   fontSize: "1.5rem",
+      // },
     },
     _main: {
       display: "flex",
@@ -76,19 +77,20 @@ const useStyles = makeStyles((them) =>
       width: "90%",
       "&>*": {
         width: "90%",
-        margin: ".5rem auto",
+        margin: "5px auto",
         [them.breakpoints.down("md")]: {
           width: "70%",
         },
       },
     },
-
     _signIn: {
       display: "flex",
       margin: "auto",
+      color: "#000",
+      
     },
     _btn: {
-      width: "40%",
+      width: "30%",
       fontSize: "1rem",
       background: "#1faa00",
       margin: "10px auto 0",
@@ -99,24 +101,25 @@ const useStyles = makeStyles((them) =>
       },
     },
     __subtext: {
-      fontSize: ".8rem",
+      fontSize: "1rem",
       marginRight: "10px",
     },
     __link: {
-      fontWeight: 500,
+      fontSize: "1rem",
+      fontWeight: 800,
       textDecoration: "none",
       color: "#000",
     },
   })
 );
 
-function FormSignUp() {
+function FormSignUp({ onClose }) {
   const classes = useStyles();
   const [values, setValues] = useState({
     password: "",
     showPassword: false,
-    resetPassword: "",
-    showResetPassword: false,
+    confirmPassword: "",
+    showConfirmPassword: false,
   });
 
   const handleChange = (prop) => (event) => {
@@ -133,105 +136,108 @@ function FormSignUp() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+  const handleClick = () => {
+    onClose();
+  };
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <form className={classes.container}>
-        <div className={classes._header}>
-          <p className={classes.__title}>Sign Up</p>
-          <p className={classes.__subTitle}>It's only takes a minute</p>
-        </div>
-        <div className={classes._main}>
-          <TextField
-            id="outlined-basic"
-            label="First Name"
-            variant="outlined"
-            color="secondary"
-            size="small"
-          />
-          <TextField
-            id="outlined-basic"
-            color="secondary"
-            label="Last Name"
-            variant="outlined"
-            size="small"
-          />
-          <TextField
-            id="outlined-basic"
-            color="secondary"
-            label="Email"
-            variant="outlined"
-            size="small"
-          />
-          <TextField
-            label="Password"
-            id="outlined-end-adornment"
-            type={values.showPassword ? "text" : "password"}
-            value={values.password}
-            onChange={handleChange("password")}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => handleClickShowPassword("showPassword")}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-            variant="outlined"
-            size="small"
-            color="secondary"
-          />
-          <TextField
-            label="Confirm password"
-            id="outlined-end-adornment"
-            type={values.showResetPassword ? "text" : "password"}
-            value={values.resetPassword}
-            onChange={handleChange("resetPassword")}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => handleClickShowPassword("showResetPassword")}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showResetPassword ? (
-                      <VisibilityOff />
-                    ) : (
-                      <Visibility />
-                    )}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-            variant="outlined"
-            size="small"
-            color="secondary"
-          />
-        </div>
-        <Button className={classes._btn}>Sign Up</Button>
-        <div className={classes._signIn}>
-          <p className={classes.__subtext}>You have an account?</p>
-          <Link
-            to="/signIn"
-            className={classes.__link}
-            style={{
-              margin: "auto",
-            }}
+      <div className={classes.root}>
+        <CssBaseline />
+        <form className={classes.container}>
+          <div className={classes._header}>
+            <h1 className={classes.__title}>SIGN UP</h1>
+            <p className={classes.__subTitle}>
+              Please fill in this form to create account
+            </p>
+          </div>
+          <div className={classes._main}>
+            <TextField
+              label="Username"
+              variant="standard"
+              color="primary"
+              size="small"
+              inputProps={{ style: { fontSize: ".9rem" } }}
+              InputLabelProps={{ style: { fontSize: ".8rem" } }}
+            />
+            <TextField
+              color="primary"
+              label="Email"
+              variant="standard"
+              size="small"
+              inputProps={{ style: { fontSize: ".9rem" } }}
+              InputLabelProps={{ style: { fontSize: ".8rem" } }}
+            />
+            <TextField
+              label="Password"
+              type={values.showPassword ? "text" : "password"}
+              value={values.password}
+              onChange={handleChange("password")}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => handleClickShowPassword("showPassword")}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+              InputLabelProps={{ style: { fontSize: ".8rem" } }}
+              variant="standard"
+              size="small"
+              color="primary"
+            />
+            <TextField
+              label="Confirm password"
+              type={values.showConfirmPassword ? "text" : "password"}
+              value={values.confirmPassword}
+              onChange={handleChange("confirmPassword")}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() =>
+                        handleClickShowPassword("showConfirmPassword")
+                      }
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {values.showConfirmPassword ? (
+                        <VisibilityOff />
+                      ) : (
+                        <Visibility />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+              InputLabelProps={{ style: { fontSize: ".8rem" } }}
+              variant="standard"
+              size="small"
+              color="primary"
+            />
+          </div>
+          <Button
+            className={classes._btn}
+            endIcon={<ArrowForward />}
+            onClick={handleClick}
           >
-            Sign in
-          </Link>
-        </div>
-      </form>
-      <div className={classes.bgImage}></div>
-    </div>
+            Sign up
+          </Button>
+          <div className={classes._signIn}>
+            <p className={classes.__subtext}>Allready you have an account? </p>
+            <Link to="/signIn" className={classes.__link}>
+              Log in
+            </Link>
+          </div>
+        </form>
+        <img src="/images/signUp.png" bgImage alt="" />
+      </div>
+
   );
 }
 

@@ -1,187 +1,186 @@
 import {
   Button,
-  FormControl,
+  CssBaseline,
   IconButton,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
+  TextField,
 } from "@material-ui/core";
+import { ArrowForward, Visibility, VisibilityOff } from "@material-ui/icons";
 import { createStyles } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Person, Visibility, VisibilityOff } from "@material-ui/icons";
 const useStyles = makeStyles((them) =>
   createStyles({
     root: {
+      width: "720px",
+      height: "512px",
       display: "flex",
-      width: "70vw",
-      margin: "2rem auto",
-      border: "0px groove #514242",
-      background: "#fff",
+      position: "relative",
+      margin: "80px auto 0",
       boxShadow: "5px 5px 2px #e0e0e0",
       [them.breakpoints.down("md")]: {
         boxShadow: "0px 5px 2px #e0e0e0",
-        minHeight:'70vh'
+        width: "70%",
+        background:
+          "linear-gradient(180deg,#cccab5 0%,  rgba(231,249,229,1) 57%, rgba(255,255,255,1) 100%)",
       },
     },
     bgImage: {
-      width: "50%",
-      height: "80vh",
-      margin: "auto 0",
-      backgroundImage: `url("/images/bgImg.png")`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "contain",
+      width: "720px",
+      height: "512px",
+      margin: "auto",
       [them.breakpoints.down("md")]: {
         display: "none",
       },
     },
     container: {
-      width: "40%",
-      margin: "auto",
-      maxHeight: "500px",
+      position: "absolute",
+      width: "350px",
+      margin: "0 2.5rem",
+      height: "450px",
       display: "flex",
+      alignItems: "center",
       flexDirection: "column",
       [them.breakpoints.down("md")]: {
-        width: "90vw",
+        width: "90%",
+        margin: "0 10px",
       },
     },
     _header: {
       display: "inline-block",
+      marginTop: "3rem",
       textAlign: "center",
-      fontSize: "2rem",
       color: "#000",
-      fontWeight: 500,
+    },
+    __subTitle: {
+      fontSize: "1rem",
+      opacity: 0.8,
+    },
+    __title: {
+      fontSize: "1.5rem",
+      fontWeight: 800,
+      margin: "10px auto",
     },
     _main: {
       display: "flex",
       flexDirection: "column",
-      margin: "auto",
-      width: "90%",
-      [them.breakpoints.down("md")]: {
-        width: "70%",
-      },
-    },
-    _sub: {
-      display: "flex",
-      justifyContent: "space-between",
       margin: "10px auto",
       width: "90%",
-      [them.breakpoints.down("md")]: {
-        width: "70%",
-        margin: "15px auto",
+
+      "&>*": {
+        width: "90%",
+        margin: "5px auto",
+        [them.breakpoints.down("md")]: {
+          width: "80%",
+        },
       },
     },
-    _signUp: {
+    _signIn: {
       display: "flex",
       margin: "auto",
-    },
-    __subtext: {
-      fontSize: ".9rem",
-      marginRight: "5px",
+      color: "#000",
     },
     _btn: {
       width: "40%",
       fontSize: "1rem",
-      background: "#1faa00",
-      margin: "auto",
-      color: "#fff",
+      background: "#64d8cb",
+      margin: "20px auto 0",
+      color: "#000",
       "&:hover": {
-        color: "#000",
-        background: "#76ff03",
+        color: "#fff",
+        background: "#00766c",
       },
-      [them.breakpoints.down("md")]: {
-        width: "30%",
-        margin: "10px auto",
-      },  
+    },
+    __subtext: {
+      fontSize: ".9rem",
+      marginRight: "10px",
+      opacity: 0.8,
     },
     __link: {
-      fontWeight: 500,
+      fontSize: ".9rem",
+      fontWeight: 800,
       textDecoration: "none",
       color: "#000",
     },
   })
 );
+
 function FormSignIn() {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
+  const [values, setValues] = useState({
     password: "",
     showPassword: false,
+    
   });
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleClickShowPassword = () => {
+  const handleClickShowPassword = (prop) => {
     setValues({
       ...values,
-      showPassword: !values.showPassword,
+      [prop]: !values[prop],
     });
   };
-
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
   return (
     <div className={classes.root}>
-      <div className={classes.bgImage}></div>
+      <CssBaseline />
       <form className={classes.container}>
         <div className={classes._header}>
-          <p>Member Login</p>
+          <h1 className={classes.__title}>SIGN UP</h1>
+          <p className={classes.__subTitle}>
+            Please fill in this form to create account
+          </p>
         </div>
         <div className={classes._main}>
-          <FormControl
-            style={{ margin: "1rem 0 " }}
-            variant="outlined"
-          >
-            <InputLabel htmlFor="outlined-adornment-username">
-              UserName
-            </InputLabel>
-            <OutlinedInput
-              color="secondary"
-              id="outlined-adornment-username"
-              type="text"
-              endAdornment={
-                <InputAdornment position="end">
-                  <Person />
-                </InputAdornment>
-              }
-              label="Username"
-            />
-          </FormControl>
-          <FormControl variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">
-              Password
-            </InputLabel>
-            <OutlinedInput
-              color="secondary"
-              id="outlined-adornment-password"
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
-              onChange={handleChange("password")}
-              endAdornment={
+          <TextField
+            label="Username"
+            variant="standard"
+            color="primary"
+            size="small"
+            inputProps={{ style: { fontSize: ".9rem" } }}
+            InputLabelProps={{ style: { fontSize: ".9rem" } }}
+          />
+          <TextField
+            label="Password"
+            type={values.showPassword ? "text" : "password"}
+            value={values.password}
+            onChange={handleChange("password")}
+            InputProps={{
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
+                    onClick={() => handleClickShowPassword("showPassword")}
                     onMouseDown={handleMouseDownPassword}
                     edge="end"
                   >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                    {values.showPassword ? (
+                      <VisibilityOff color="primary" />
+                    ) : (
+                      <Visibility color="primary" />
+                    )}
                   </IconButton>
                 </InputAdornment>
-              }
-              label="Password"
-            />
-          </FormControl>
+              ),
+            }}
+            InputLabelProps={{ style: { fontSize: ".9rem" } }}
+            variant="standard"
+            size="small"
+            color="primary"
+          />
         </div>
-
         <div className={classes._sub}>
           <div className={classes.__subtext}>
-            <input type="checkbox" id='checkbox' />
-            <label for="checkbox" style={{marginLeft:'5px' }}>Remember me</label>
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox" style={{ marginLeft: "5px" }}>
+              Remember me
+            </label>
           </div>
           <Link className={classes.__link}>Forgot password?</Link>
         </div>
@@ -199,6 +198,7 @@ function FormSignIn() {
           </Link>
         </div>
       </form>
+      <img src="/images/signUp.png" className={classes.bgImage} alt="" />
     </div>
   );
 }
