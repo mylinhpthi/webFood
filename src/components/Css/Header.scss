@@ -9,7 +9,6 @@ ul{
 }
 a {
     text-decoration: none;
-    color:#fff;
 }
 .desktop{
     display: block;
@@ -42,7 +41,7 @@ a {
         .content{
             cursor: pointer;
             &:hover{
-                color:#000;
+                color:#fff;
             }
         }
     }
@@ -97,6 +96,7 @@ a {
     width: 15%;
     margin:10px auto;
     position: absolute;
+    z-index: 1000;
     background-color: #fff;
     cursor: pointer;
     .item_product{

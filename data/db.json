@@ -1,712 +1,89 @@
 {
-  "LinkCollection": [
+  "product": [
     {
       "id": 0,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        }
-      ],
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     },
     {
       "id": 1,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        }
-      ],
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     },
     {
       "id": 2,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        }
-      ],
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     },
     {
       "id": 3,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        }
-      ],
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     },
     {
       "id": 4,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "link": "https://linktr.ee/admin",
-          "icon": "Tree",
-          "label": "LinkTree",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 100
-        },
-        {
-          "link": "https://app.diagrams.net",
-          "icon": "Diagrams",
-          "label": "Diagrams",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 99
-        },
-        {
-          "link": "https://code.tutsplus.com",
-          "icon": "Plus",
-          "label": "Tutsplus",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 98
-        },
-        {
-          "link": "https://pnghunter.com/",
-          "icon": "Hunter",
-          "label": "Pnghunter",
-          "textColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "bgColor": [
-            "blue",
-            "black",
-            "pink",
-            "yelow"
-          ],
-          "borderWidth": 1,
-          "clickCount": 97
-        }
-      ],
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     },
     {
       "id": 5,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Collection ",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": [
-        {
-          "label": "My Linh",
-          "link": "https://material-ui.com/components/material-icons/#material-icons",
-          "color": "#ff0026"
-        },
-        {
-          "label": "ssssss",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Linhhisss",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "bbbbbbbbb",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        },
-        {
-          "label": "Linh",
-          "link": "https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=212121"
-        }
-      ],
-      "socialLinks": [
-        {
-          "type": "Facebook",
-          "link": "",
-          "color": "blue"
-        },
-        {
-          "type": "Email",
-          "link": "linh@gmail.com",
-          "color": "lightblue"
-        },
-        {
-          "type": "Twitter",
-          "link": "@MyLinh",
-          "color": "lightblue"
-        },
-        {
-          "type": "Instagram",
-          "link": "@MyLINH",
-          "color": "daskorange"
-        },
-        {
-          "type": "Youtube",
-          "link": "a",
-          "color": "lightblue"
-        },
-        {
-          "type": "Soundcloud",
-          "link": "",
-          "color": "lightblue"
-        },
-        {
-          "type": "LinkedIn",
-          "link": "",
-          "color": "lightblue"
-        },
-        {
-          "type": "WhatsApp",
-          "link": "",
-          "color": "lightblue"
-        },
-        {
-          "type": "TikTok",
-          "link": "",
-          "color": "lightblue"
-        }
-      ],
-      "visitCount": 100
-    },
-    {
-      "id": 6,
-      "createdAt": "28/08/2020",
-      "updateAt": "29/08/2020",
-      "avatarURL": "https://picsum.photos/200",
-      "title": "Article",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "bgColor: string": [
-        "blue",
-        "black",
-        "pink",
-        "yelow"
-      ],
-      "bgImageURL": "https://picsum.photos/200",
-      "webLinks": {
-        "label": "aaayyy",
-        "link": "xxxxsss"
-      },
-      "socialLinks": [
-        {
-          "link": "https://www.facebook.com/",
-          "type": "facebook",
-          "color": "blue",
-          "clickCount": 96
-        },
-        {
-          "link": "https://zalo.me/pc",
-          "type": "zalo",
-          "color": "lightblue",
-          "clickCount": 95
-        },
-        {
-          "link": "https://www.instagram.com/",
-          "type": "instagram",
-          "color": "daskorange",
-          "clickCount": 95
-        }
-      ],
-      "visitCount": 100
-    },
-    {
-      "webLinks": {
-        "label": "aaa",
-        "link": "xxxxx"
-      },
-      "id": 7
-    },
-    {
-      "webLinks.label": "ava",
-      "webLinks.link": "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox/FMfcgzGkbDVqjGCMbmdrZNgSvVFkLLSF",
-      "id": 8
+      "id_product": "PR01",
+      "name_product": "Cà chua Mỹ cao cấp",
+      "price": "200.000",
+      "DonVi": "Kg/hộp",
+      "Sale": "50%",
+      "image":  ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+      "ThuongHieu":"Mỹ",
+      "TinhTrang":" Còn hàng",
+      "NguonGoc":"Mỹ",
+      "SL":"1",
+      "MieuTa":"Táo là loại cây ưa khí hậu khô, nóng và ít côn trùng và dịch bệnh. Táo GrannySmith (Táo Xanh) có nguồn gốc từ Úc du nhập vào Mỹ năm 1868. Táo có màu xanh lá, vị chua đậm, rất giòn, nhiều nước."
     }
+    
   ]
 }

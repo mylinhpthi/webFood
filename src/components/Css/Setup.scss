@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
+
+$header-font:'Raleway',
+sans-serif;
+$logo-font:'Great Vibes',
+cursive;
+$content-font:'PT Sans',
+sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+$primary-dark:#1faa00;
+$primary-light:#b4f586;
+$primary-main:#64dd17;
+
+$secondary-dark:#c41c00;
+$secondary-light:#ff8a50;
+$secondary-main:#ff5722;

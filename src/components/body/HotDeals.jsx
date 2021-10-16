@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as React from "react";
-import "./Css/dist/HotDeals.css";
+import "../Css/dist/HotDeals.css";
 import { Avatar, Button, Container, Grid } from "@material-ui/core";
 import { Paper } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
@@ -10,10 +10,10 @@ import { yellow } from "@material-ui/core/colors";
 import HomeIcon from "@mui/icons-material/Home";
 const useStyles = makeStyles((theme) => ({
   root: {
-    // border: "1px solid red",
+    margin: '3em'
   },
 }));
-export default function Test() {
+export default function HotDeals() {
   const classes = useStyles();
 
   return (

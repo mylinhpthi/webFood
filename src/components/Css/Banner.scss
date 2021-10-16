@@ -1,0 +1,114 @@
+@import "Setup";
+
+.banner {
+    width: 100vw;
+    height: 90vh;
+    font-family: $content-font;
+}
+
+.image_banner {
+    width: 100%;
+    height: 80vh;
+    margin: 0;
+}
+
+.content_banner {
+    position: absolute;
+    top: 33%;
+    left: 5%;
+    width: 40%;
+    height: 50%;
+    padding: 1rem;
+
+    .header {
+        font-size: 1.5rem;
+
+        span {
+            font-size: 2.5rem;
+        }
+
+        margin:.5rem 0;
+    }
+
+    .description {
+        font-size: 1.5rem;
+        padding: .5rem;
+    }
+
+    .button {
+        width: 150px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        position: relative;
+        display: inline-block;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        outline: none;
+    }
+
+    .button-effect {
+        border: none;
+        background:$primary-dark;
+        background: linear-gradient(0deg, $primary-main 0%, $primary-light 100%);
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .button-effect:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .button-effect:before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        top: -180px;
+        left: 0;
+        width: 30px;
+        height: 100%;
+        background-color: #fff;
+        animation: shiny-btn1 3s ease-in-out infinite;
+    }
+
+    .button-effect:hover {
+        border:1px solid $secondary-dark;
+        background: #fff;
+        color:$secondary-dark;  
+    }
+    .button-effect:active {
+        box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .3),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2),
+            inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+            inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+    }
+}
+@keyframes shiny-btn1 {
+    0% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+
+    80% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+
+    81% {
+        -webkit-transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+}

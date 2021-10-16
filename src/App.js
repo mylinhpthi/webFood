@@ -7,13 +7,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import FormSignIn from "./components/Form/FormSignIn";
-import FormSignUp from "./components/Form/FormSignUp";
-import Header from "./components/Header/Header";
 import Test from "./components/Test";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-
+import Header from "./components/Header/Header"
+import MainLayOut from "./components/body/MainLayOut";
 // const axios = Axios.create({
 //   baseURL: "http://localhost:8000/",
 // });
@@ -49,17 +47,8 @@ function App() {
       <div>
         <Header />
         <Switch>
-          <Route path="/signIn">
-            <FormSignIn />
-          </Route>
-          <Route path="/signUp">
-            <FormSignUp />
-          </Route>
-          <Route path="/test">
-            <Test />
-          </Route>
           <Route path="/">
-            <FormSignUp />
+            <MainLayOut />
           </Route>
           
         </Switch>

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap");
+.banner {
+  width: 100vw;
+  height: 90vh;
+  font-family: "PT Sans", sans-serif;
+}
+
+.image_banner {
+  width: 100%;
+  height: 80vh;
+  margin: 0;
+}
+
+.content_banner {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+  width: 40%;
+  height: 50%;
+  padding: 1rem;
+}
+.content_banner .header {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+.content_banner .header span {
+  font-size: 2.5rem;
+}
+.content_banner .description {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.content_banner .button {
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.content_banner .button-effect {
+  border: none;
+  background: #1faa00;
+  background: linear-gradient(0deg, #64dd17 0%, #9cff57 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.content_banner .button-effect:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.content_banner .button-effect:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+.content_banner .button-effect:hover {
+  border: 1px solid #c41c00;
+  background: #fff;
+  color: #c41c00;
+}
+.content_banner .button-effect:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+@keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
